@@ -34,6 +34,10 @@ struct Loop: Hashable {
     @frozen enum Orientation { case clockwise, anticlockwise }
     struct Area: Hashable {
         let magnitude: Float, orientation: Orientation
+        init(_ area: Float) {
+            self.magnitude = abs(area)
+            self.orientation = area > 0 ? .anticlockwise : .clockwise
+        }
         init(_ magnitude: Float, oriented: Orientation) {
             self.magnitude = magnitude
             self.orientation = oriented

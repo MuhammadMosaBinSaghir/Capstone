@@ -23,11 +23,7 @@ extension OrderedCollection where Element == Point {
             area += (assessed.x * adjacent.y) - (assessed.y * adjacent.x)
         }
         guard !area.isZero else { return nil }
-        let orientation: Loop.Orientation = switch area {
-        case _ where area > 0: .anticlockwise
-        default: .clockwise
-        }
-        return Loop.Area(0.5*area, oriented: orientation)
+        return Loop.Area(0.5*area)
     }
     func orientation() -> Loop.Orientation? {
         guard let area = self.area() else { return nil }

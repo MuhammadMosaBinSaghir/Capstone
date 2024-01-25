@@ -28,8 +28,8 @@ struct Wing {
         0.5,-0.5
         0.75,-0.75
         """
-        let d = loops[0].decimated(removing: 2)
-        print(d?.text())
+        print(loops[0].streamlined(to: 116).text())
+        
         
         let (planes, loops) = planes.normalized(with: loops)
         self.loops = OrderedSet(loops)
@@ -37,6 +37,4 @@ struct Wing {
     }
     
 }
-
-
-// func that if not jagged, return the array, but if jagged, decimates to minimum
+// 226 - 100 = 116
