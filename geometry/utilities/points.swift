@@ -20,7 +20,4 @@ extension Point {
     func area(to pointed: Self, from origin: Self) -> Loop.Area {
         Loop.Area(0.5 * self.cross(to: pointed, from: origin))
     }
-    func knot(from base: Float, to pointed: Point, type: Spline) -> Float {
-        pow(self.distance(to: pointed), type.alpha()) + base
-    }
 }

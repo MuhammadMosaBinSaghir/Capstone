@@ -21,7 +21,7 @@ struct Volume {
     
     /// Conditionally initializes a volume from ordered loops and planes.
     /// - Note: Volumes are defined by at least 1 loop-plane pair and contain the same number of loops as planes.
-    init?(_ label: String, with loops: OrderedSet<Loop>, at planes: OrderedSet<Float>) {
+    init?(_ label: String, with loops: [Loop], at planes: OrderedSet<Float>) {
         self.label = label
         guard let decimated = loops.decimated(with: planes) else { return nil }
         let (planes, loops) = decimated.attributes.normalized(with: decimated.loops)
@@ -29,4 +29,3 @@ struct Volume {
         self.planes = OrderedSet(planes)
     }
 }
-

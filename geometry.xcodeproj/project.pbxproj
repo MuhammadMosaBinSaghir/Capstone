@@ -16,15 +16,14 @@
 		C3440FCD2B62101C0058574F /* operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3440FCC2B62101C0058574F /* operators.swift */; };
 		C3440FCF2B6217360058574F /* loops.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3440FCE2B6217360058574F /* loops.swift */; };
 		C3440FD12B62F4AC0058574F /* sequeneces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3440FD02B62F4AC0058574F /* sequeneces.swift */; };
+		C3440FD32B6357340058574F /* coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3440FD22B6357340058574F /* coordinates.swift */; };
 		C3660C662B5B956100873942 /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3660C652B5B956100873942 /* protocols.swift */; };
 		C3660C6C2B5B95F000873942 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = C3660C6B2B5B95F000873942 /* Collections */; };
 		C3660C6E2B5B95F000873942 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = C3660C6D2B5B95F000873942 /* DequeModule */; };
 		C3660C702B5B95F000873942 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = C3660C6F2B5B95F000873942 /* OrderedCollections */; };
 		C3660C722B5B9E2800873942 /* ordered collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3660C712B5B9E2800873942 /* ordered collections.swift */; };
 		C3758E8D2B5B54E0001C4D5F /* loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3758E8C2B5B54E0001C4D5F /* loop.swift */; };
-		C377E5462B127AB600BF34ED /* spline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C377E5452B127AB600BF34ED /* spline.swift */; };
-		C377E54B2B12A33E00BF34ED /* library.swift in Sources */ = {isa = PBXBuildFile; fileRef = C377E54A2B12A33E00BF34ED /* library.swift */; };
-		C377E5502B12E10D00BF34ED /* geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C377E54F2B12E10D00BF34ED /* geometry.swift */; };
+		C3E2FC022B64456A00A3006A /* wing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC012B64456A00A3006A /* wing.swift */; };
 		C3F461872B1279E400E595D5 /* app.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F461862B1279E400E595D5 /* app.swift */; };
 		C3F461892B1279E400E595D5 /* content.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F461882B1279E400E595D5 /* content.swift */; };
 		C3F4618B2B1279E400E595D5 /* build.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F4618A2B1279E400E595D5 /* build.xcassets */; };
@@ -41,12 +40,11 @@
 		C3440FCC2B62101C0058574F /* operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = operators.swift; sourceTree = "<group>"; };
 		C3440FCE2B6217360058574F /* loops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loops.swift; sourceTree = "<group>"; };
 		C3440FD02B62F4AC0058574F /* sequeneces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sequeneces.swift; sourceTree = "<group>"; };
+		C3440FD22B6357340058574F /* coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coordinates.swift; sourceTree = "<group>"; };
 		C3660C652B5B956100873942 /* protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
 		C3660C712B5B9E2800873942 /* ordered collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ordered collections.swift"; sourceTree = "<group>"; };
 		C3758E8C2B5B54E0001C4D5F /* loop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loop.swift; sourceTree = "<group>"; };
-		C377E5452B127AB600BF34ED /* spline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spline.swift; sourceTree = "<group>"; };
-		C377E54A2B12A33E00BF34ED /* library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = library.swift; sourceTree = "<group>"; };
-		C377E54F2B12E10D00BF34ED /* geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = geometry.swift; sourceTree = "<group>"; };
+		C3E2FC012B64456A00A3006A /* wing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wing.swift; sourceTree = "<group>"; };
 		C3F461832B1279E400E595D5 /* geometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F461862B1279E400E595D5 /* app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app.swift; sourceTree = "<group>"; };
 		C3F461882B1279E400E595D5 /* content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = content.swift; sourceTree = "<group>"; };
@@ -69,12 +67,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C3660C692B5B958000873942 /* models */ = {
+		C3660C692B5B958000873942 /* functional models */ = {
 			isa = PBXGroup;
 			children = (
 				C3660C652B5B956100873942 /* protocols.swift */,
 			);
-			path = models;
+			path = "functional models";
 			sourceTree = "<group>";
 		};
 		C377E5442B127A1900BF34ED /* assets */ = {
@@ -86,26 +84,25 @@
 			path = assets;
 			sourceTree = "<group>";
 		};
-		C377E5472B12939E00BF34ED /* spatial */ = {
+		C377E5472B12939E00BF34ED /* spatial models */ = {
 			isa = PBXGroup;
 			children = (
-				C377E54A2B12A33E00BF34ED /* library.swift */,
-				C377E54F2B12E10D00BF34ED /* geometry.swift */,
-				C377E5452B127AB600BF34ED /* spline.swift */,
 				C3440FCA2B61D9D20058574F /* angle.swift */,
 				C3758E8C2B5B54E0001C4D5F /* loop.swift */,
 				C33F8AA22B59E87400D50127 /* volume.swift */,
+				C3E2FC012B64456A00A3006A /* wing.swift */,
 			);
-			path = spatial;
+			path = "spatial models";
 			sourceTree = "<group>";
 		};
 		C377E54C2B12A4F900BF34ED /* utilities */ = {
 			isa = PBXGroup;
 			children = (
 				C3440FCC2B62101C0058574F /* operators.swift */,
-				C3440FCE2B6217360058574F /* loops.swift */,
-				C31372322B5C686E00A6AF7C /* points.swift */,
 				C33F8AA62B59EDFC00D50127 /* range.swift */,
+				C31372322B5C686E00A6AF7C /* points.swift */,
+				C3440FD22B6357340058574F /* coordinates.swift */,
+				C3440FCE2B6217360058574F /* loops.swift */,
 				C3440FD02B62F4AC0058574F /* sequeneces.swift */,
 				C3440FC82B6185C40058574F /* collections.swift */,
 				C3660C712B5B9E2800873942 /* ordered collections.swift */,
@@ -133,12 +130,12 @@
 		C3F461852B1279E400E595D5 /* geometry */ = {
 			isa = PBXGroup;
 			children = (
+				C377E5442B127A1900BF34ED /* assets */,
+				C3660C692B5B958000873942 /* functional models */,
+				C377E5472B12939E00BF34ED /* spatial models */,
 				C3F461862B1279E400E595D5 /* app.swift */,
 				C3F461882B1279E400E595D5 /* content.swift */,
 				C377E54C2B12A4F900BF34ED /* utilities */,
-				C3660C692B5B958000873942 /* models */,
-				C377E5472B12939E00BF34ED /* spatial */,
-				C377E5442B127A1900BF34ED /* assets */,
 				C3F4618C2B1279E400E595D5 /* settings.entitlements */,
 			);
 			path = geometry;
@@ -177,7 +174,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					C3F461822B1279E400E595D5 = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -224,9 +221,7 @@
 			files = (
 				C3F461892B1279E400E595D5 /* content.swift in Sources */,
 				C31372312B5C5FAF00A6AF7C /* spatial collections.swift in Sources */,
-				C377E54B2B12A33E00BF34ED /* library.swift in Sources */,
 				C3440FCF2B6217360058574F /* loops.swift in Sources */,
-				C377E5462B127AB600BF34ED /* spline.swift in Sources */,
 				C3660C662B5B956100873942 /* protocols.swift in Sources */,
 				C3440FD12B62F4AC0058574F /* sequeneces.swift in Sources */,
 				C33F8AA72B59EDFC00D50127 /* range.swift in Sources */,
@@ -237,7 +232,8 @@
 				C31372332B5C686E00A6AF7C /* points.swift in Sources */,
 				C33F8AA32B59E87400D50127 /* volume.swift in Sources */,
 				C3758E8D2B5B54E0001C4D5F /* loop.swift in Sources */,
-				C377E5502B12E10D00BF34ED /* geometry.swift in Sources */,
+				C3440FD32B6357340058574F /* coordinates.swift in Sources */,
+				C3E2FC022B64456A00A3006A /* wing.swift in Sources */,
 				C3440FCD2B62101C0058574F /* operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +275,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -340,6 +337,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -367,6 +365,7 @@
 				CODE_SIGN_ENTITLEMENTS = geometry/settings.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"geometry/assets/preview.xcassets\"";
 				DEVELOPMENT_TEAM = VRKULQX9DS;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -405,6 +404,7 @@
 				CODE_SIGN_ENTITLEMENTS = geometry/settings.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"geometry/assets/preview.xcassets\"";
 				DEVELOPMENT_TEAM = VRKULQX9DS;
 				ENABLE_HARDENED_RUNTIME = YES;

@@ -30,7 +30,7 @@ struct Loop: Hashable {
     let startIndex: Index
     /// The index after which is the loop's first trailing edge.
     let endIndex: Index
-    
+
     @frozen enum Orientation { case clockwise, anticlockwise }
     struct Area: Hashable {
         let magnitude: Float, orientation: Orientation
