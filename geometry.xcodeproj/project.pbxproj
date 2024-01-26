@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C31372312B5C5FAF00A6AF7C /* spatial collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31372302B5C5FAF00A6AF7C /* spatial collections.swift */; };
 		C31372332B5C686E00A6AF7C /* points.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31372322B5C686E00A6AF7C /* points.swift */; };
-		C33F8AA32B59E87400D50127 /* wing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F8AA22B59E87400D50127 /* wing.swift */; };
+		C33F8AA32B59E87400D50127 /* volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F8AA22B59E87400D50127 /* volume.swift */; };
 		C33F8AA72B59EDFC00D50127 /* range.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F8AA62B59EDFC00D50127 /* range.swift */; };
 		C3440FC92B6185C40058574F /* collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3440FC82B6185C40058574F /* collections.swift */; };
 		C3440FCB2B61D9D20058574F /* angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3440FCA2B61D9D20058574F /* angle.swift */; };
@@ -34,7 +34,7 @@
 /* Begin PBXFileReference section */
 		C31372302B5C5FAF00A6AF7C /* spatial collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "spatial collections.swift"; sourceTree = "<group>"; };
 		C31372322B5C686E00A6AF7C /* points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = points.swift; sourceTree = "<group>"; };
-		C33F8AA22B59E87400D50127 /* wing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wing.swift; sourceTree = "<group>"; };
+		C33F8AA22B59E87400D50127 /* volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = volume.swift; sourceTree = "<group>"; };
 		C33F8AA62B59EDFC00D50127 /* range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = range.swift; sourceTree = "<group>"; };
 		C3440FC82B6185C40058574F /* collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collections.swift; sourceTree = "<group>"; };
 		C3440FCA2B61D9D20058574F /* angle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = angle.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 				C377E5452B127AB600BF34ED /* spline.swift */,
 				C3440FCA2B61D9D20058574F /* angle.swift */,
 				C3758E8C2B5B54E0001C4D5F /* loop.swift */,
-				C33F8AA22B59E87400D50127 /* wing.swift */,
+				C33F8AA22B59E87400D50127 /* volume.swift */,
 			);
 			path = spatial;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 				C3660C722B5B9E2800873942 /* ordered collections.swift in Sources */,
 				C3440FC92B6185C40058574F /* collections.swift in Sources */,
 				C31372332B5C686E00A6AF7C /* points.swift in Sources */,
-				C33F8AA32B59E87400D50127 /* wing.swift in Sources */,
+				C33F8AA32B59E87400D50127 /* volume.swift in Sources */,
 				C3758E8D2B5B54E0001C4D5F /* loop.swift in Sources */,
 				C377E5502B12E10D00BF34ED /* geometry.swift in Sources */,
 				C3440FCD2B62101C0058574F /* operators.swift in Sources */,

@@ -44,7 +44,7 @@ struct Loop: Hashable {
         }
     }
     
-    /// Initializes a loop from an ordered set of points.
+    /// Conditionally initializes a loop from an ordered set of points.
     /// - Note: Loops are defined by at least 3 unique coordinates.
     init?(_ set: OrderedSet<Point>) {
         guard set.count >= 3 else { return nil }

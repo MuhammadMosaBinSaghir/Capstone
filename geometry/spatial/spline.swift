@@ -45,15 +45,13 @@ extension [Point] {
     
     func mesh(radius: Float = 20, precision p: Int = 6) -> String {
         let A = Loop(Library.middle)!
-        let B = Loop(Library.wingtip)!
-        let C = Loop(Library.third)!
-        let D = Loop(Library.base)!
+        let B = Loop(Library.base)!
+        let D = Loop(Library.third)!
+        let E = Loop(Library.wingtip)!
         
-        let loops = OrderedSet([A, B, D])
- 
-        let planes = OrderedSet<Float>([50, 100, 0])
-        let wing = Wing("", with: loops, at: planes)
-
+        let loops = OrderedSet([A, B, D, E])
+        let planes = OrderedSet<Float>([50, 0, 75, 100])
+        let wing = Volume("", with: loops, at: planes)
         
         let sorted = self.sorted { $0.x < $1.x }
         guard let leading = sorted.first else { return "" }
