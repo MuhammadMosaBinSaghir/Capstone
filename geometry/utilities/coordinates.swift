@@ -12,6 +12,7 @@ extension Coordinate {
         case .ordinates: (location - pointer.y)/gradient.y
         case .applicates: (location - pointer.z)/gradient.z
         }
-        return pointer + parameter * gradient
+        return pointer + gradient * parameter
     }
+    func flat() -> Point { Point(self.x, self.y) }
 }

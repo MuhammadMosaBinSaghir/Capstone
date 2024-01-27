@@ -1,4 +1,4 @@
-import Foundation
+import SwiftUI
 import OrderedCollections
 
 /// A representation of a closed curve formed by a collection of unique points.
@@ -7,7 +7,7 @@ import OrderedCollections
 ///
 /// - Note: Loops are defined by at least 3 unique coordinates.
 
-struct Loop: Hashable {
+struct Loop: Hashable, Shape {
     typealias Index = Int
     typealias Element = Point
 
@@ -80,4 +80,11 @@ struct Loop: Hashable {
     /// A loop equals another loop when both represent a single polygon that lies on a single plane.
     static func == (lhs: Loop, rhs: Loop) -> Bool { lhs.points == rhs.points }
     func hash(into hasher: inout Hasher) { hasher.combine(points) }
+    
+    func path(in rect: CGRect) -> Path { self.points.path(in: rect) }
+    
+    func path(in rect: CGRect, anchor: Loop.Index) -> Path {
+        let anchored = self.map { Point(x: $0.x, y: $0.y - self[anchor].y) }
+        return anchored.path(in: rect)
+    }
 }

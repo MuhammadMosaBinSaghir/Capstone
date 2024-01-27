@@ -1,6 +1,6 @@
 import Foundation
 
-let wing = Volume(
+var wing = Volume(
     "Cessna Citation X",
     with: [
         Loop([
@@ -1217,4 +1217,3 @@ let wing = Volume(
     ],
     at: [0, 0.25, 0.5, 0.75, 1]
 )!
-

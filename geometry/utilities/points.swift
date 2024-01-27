@@ -1,5 +1,6 @@
 import Foundation
 import MetalKit
+
 typealias Point = simd_float2
 
 extension Point {
@@ -19,5 +20,9 @@ extension Point {
     }
     func area(to pointed: Self, from origin: Self) -> Loop.Area {
         Loop.Area(0.5 * self.cross(to: pointed, from: origin))
+    }
+    func graphed() -> CGPoint { CGPoint(self) }
+    func projected(onto plane: Float) -> Coordinate {
+        Coordinate(self.x, self.y, plane)
     }
 }

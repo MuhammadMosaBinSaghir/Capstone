@@ -1,8 +1,14 @@
-import Foundation
+import SwiftUI
+
+protocol Positionable {
+    var x: Float { get set }
+    var y: Float { get set }
+    func text(precision digits: Int) -> String
+}
 
 protocol SpatialCollection: BidirectionalCollection
-where Element == Point, Index == Int {
-    init?(_ text: String)
+where Element: Positionable, Index == Int {
+    func path(in rect: CGRect) -> Path
     func text(precision digits: Int) -> String
 }
 

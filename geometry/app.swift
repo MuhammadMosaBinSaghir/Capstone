@@ -4,7 +4,7 @@ import SwiftUI
 struct Geometry: App {
     var body: some Scene {
         WindowGroup {
-            Content()
+            Contents()
         }
         .windowStyle(.hiddenTitleBar)
     }
