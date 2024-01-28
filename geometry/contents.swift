@@ -9,12 +9,15 @@ struct Contents: View {
                 .fill(.clear)
             VStack {
                 Volume(wing.label, with: wing.loops, at: wing.planes, showing: plane)!
-                    .stroke(.white)
                     .animation(.default, value: plane)
-                    .frame(width: 500, height: 500)
-                    
                 Slider(value: $plane, in: 0...1) {
                     Label("slide me", systemImage: "star")
+                }
+                .onAppear {
+                    let first = wing.loops[0]
+                    let kernel = Kernel(type: .gaussian(σ: 0.5), count: 10)
+                    let convolved = first.convolve(with: kernel)
+                    print(convolved?.text())
                 }
             }
         }

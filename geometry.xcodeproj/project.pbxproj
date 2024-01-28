@@ -28,6 +28,8 @@
 		C3E2FC072B64927200A3006A /* transparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC062B64927200A3006A /* transparent.swift */; };
 		C3E2FC092B64947E00A3006A /* modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC082B64947E00A3006A /* modifiers.swift */; };
 		C3E2FC0B2B64B82500A3006A /* positionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC0A2B64B82500A3006A /* positionable.swift */; };
+		C3E2FC0F2B660C1000A3006A /* kernels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC0E2B660C1000A3006A /* kernels.swift */; };
+		C3E2FC122B660E8100A3006A /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = C3E2FC112B660E8100A3006A /* Algorithms */; };
 		C3F461872B1279E400E595D5 /* app.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F461862B1279E400E595D5 /* app.swift */; };
 		C3F461892B1279E400E595D5 /* contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F461882B1279E400E595D5 /* contents.swift */; };
 		C3F4618B2B1279E400E595D5 /* build.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F4618A2B1279E400E595D5 /* build.xcassets */; };
@@ -53,6 +55,7 @@
 		C3E2FC062B64927200A3006A /* transparent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transparent.swift; sourceTree = "<group>"; };
 		C3E2FC082B64947E00A3006A /* modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modifiers.swift; sourceTree = "<group>"; };
 		C3E2FC0A2B64B82500A3006A /* positionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = positionable.swift; sourceTree = "<group>"; };
+		C3E2FC0E2B660C1000A3006A /* kernels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kernels.swift; sourceTree = "<group>"; };
 		C3F461832B1279E400E595D5 /* geometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F461862B1279E400E595D5 /* app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app.swift; sourceTree = "<group>"; };
 		C3F461882B1279E400E595D5 /* contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contents.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E2FC122B660E8100A3006A /* Algorithms in Frameworks */,
 				C3660C6C2B5B95F000873942 /* Collections in Frameworks */,
 				C3660C6E2B5B95F000873942 /* DequeModule in Frameworks */,
 				C3660C702B5B95F000873942 /* OrderedCollections in Frameworks */,
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				C3660C652B5B956100873942 /* protocols.swift */,
+				C3E2FC0E2B660C1000A3006A /* kernels.swift */,
 			);
 			path = "functional models";
 			sourceTree = "<group>";
@@ -149,12 +154,12 @@
 		C3F461852B1279E400E595D5 /* geometry */ = {
 			isa = PBXGroup;
 			children = (
+				C3F461862B1279E400E595D5 /* app.swift */,
+				C3F461882B1279E400E595D5 /* contents.swift */,
 				C377E5442B127A1900BF34ED /* assets */,
 				C3660C692B5B958000873942 /* functional models */,
 				C3E2FC052B64925100A3006A /* view models */,
 				C377E5472B12939E00BF34ED /* spatial models */,
-				C3F461862B1279E400E595D5 /* app.swift */,
-				C3F461882B1279E400E595D5 /* contents.swift */,
 				C377E54C2B12A4F900BF34ED /* utilities */,
 				C3F4618C2B1279E400E595D5 /* settings.entitlements */,
 			);
@@ -181,6 +186,7 @@
 				C3660C6B2B5B95F000873942 /* Collections */,
 				C3660C6D2B5B95F000873942 /* DequeModule */,
 				C3660C6F2B5B95F000873942 /* OrderedCollections */,
+				C3E2FC112B660E8100A3006A /* Algorithms */,
 			);
 			productName = geometry;
 			productReference = C3F461832B1279E400E595D5 /* geometry.app */;
@@ -212,6 +218,7 @@
 			mainGroup = C3F4617A2B1279E400E595D5;
 			packageReferences = (
 				C3660C6A2B5B95F000873942 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				C3E2FC102B660E8100A3006A /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = C3F461842B1279E400E595D5 /* Products */;
 			projectDirPath = "";
@@ -248,6 +255,7 @@
 				C3660C662B5B956100873942 /* protocols.swift in Sources */,
 				C3440FD12B62F4AC0058574F /* sequeneces.swift in Sources */,
 				C33F8AA72B59EDFC00D50127 /* range.swift in Sources */,
+				C3E2FC0F2B660C1000A3006A /* kernels.swift in Sources */,
 				C3F461872B1279E400E595D5 /* app.swift in Sources */,
 				C3440FCB2B61D9D20058574F /* angle.swift in Sources */,
 				C3660C722B5B9E2800873942 /* ordered collections.swift in Sources */,
@@ -491,6 +499,14 @@
 				minimumVersion = 1.0.6;
 			};
 		};
+		C3E2FC102B660E8100A3006A /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -508,6 +524,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C3660C6A2B5B95F000873942 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
+		};
+		C3E2FC112B660E8100A3006A /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3E2FC102B660E8100A3006A /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

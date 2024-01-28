@@ -57,3 +57,4 @@ extension Collection where Element: FloatingPoint, Index == Int {
         return (elements: normalized, attributes: attributes)
     }
 }
+
