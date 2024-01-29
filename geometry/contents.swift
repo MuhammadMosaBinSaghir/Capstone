@@ -14,10 +14,16 @@ struct Contents: View {
                     Label("slide me", systemImage: "star")
                 }
                 .onAppear {
-                    let first = wing.loops[0]
-                    let kernel = Kernel(type: .gaussian(σ: 0.5), count: 10)
-                    let convolved = first.convolve(with: kernel)
-                    print(convolved?.text())
+                    print(wing.loops[0].count)
+                    print(wing.loops[0].map { $0.y })
+                    
+                    //let b = a.points
+                    //let k = Kernel(type: .box, count: 3)
+                    //print(k.weights)
+                    //let c = b.convolve(with: k)
+                    //let fastC = b.elements.WAT(with: k)
+                    //let d = Loop(c)
+                    //print(fastC?.text())
                 }
             }
         }
@@ -28,3 +34,12 @@ struct Contents: View {
 }
 
 #Preview { Contents() }
+
+let T = Volume(
+    "",
+    with:
+        [
+            Loop([Point(x: 0, y: 0), Point(x: 0.5, y: 0), Point(x: 1, y: 0), Point(x: 1, y: 0.5), Point(x: 1, y: 1)])!,
+        ],
+    at: [0]
+)!

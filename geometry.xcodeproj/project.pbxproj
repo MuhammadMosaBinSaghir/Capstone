@@ -17,6 +17,7 @@
 		C3440FCF2B6217360058574F /* loops.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3440FCE2B6217360058574F /* loops.swift */; };
 		C3440FD12B62F4AC0058574F /* sequeneces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3440FD02B62F4AC0058574F /* sequeneces.swift */; };
 		C3440FD32B6357340058574F /* coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3440FD22B6357340058574F /* coordinates.swift */; };
+		C354AFDE2B67378D008F4C9C /* Surge in Frameworks */ = {isa = PBXBuildFile; productRef = C354AFDD2B67378D008F4C9C /* Surge */; };
 		C3660C662B5B956100873942 /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3660C652B5B956100873942 /* protocols.swift */; };
 		C3660C6C2B5B95F000873942 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = C3660C6B2B5B95F000873942 /* Collections */; };
 		C3660C6E2B5B95F000873942 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = C3660C6D2B5B95F000873942 /* DequeModule */; };
@@ -70,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3E2FC122B660E8100A3006A /* Algorithms in Frameworks */,
+				C354AFDE2B67378D008F4C9C /* Surge in Frameworks */,
 				C3660C6C2B5B95F000873942 /* Collections in Frameworks */,
 				C3660C6E2B5B95F000873942 /* DequeModule in Frameworks */,
 				C3660C702B5B95F000873942 /* OrderedCollections in Frameworks */,
@@ -187,6 +189,7 @@
 				C3660C6D2B5B95F000873942 /* DequeModule */,
 				C3660C6F2B5B95F000873942 /* OrderedCollections */,
 				C3E2FC112B660E8100A3006A /* Algorithms */,
+				C354AFDD2B67378D008F4C9C /* Surge */,
 			);
 			productName = geometry;
 			productReference = C3F461832B1279E400E595D5 /* geometry.app */;
@@ -219,6 +222,7 @@
 			packageReferences = (
 				C3660C6A2B5B95F000873942 /* XCRemoteSwiftPackageReference "swift-collections" */,
 				C3E2FC102B660E8100A3006A /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				C354AFDA2B67272B008F4C9C /* XCRemoteSwiftPackageReference "Surge" */,
 			);
 			productRefGroup = C3F461842B1279E400E595D5 /* Products */;
 			projectDirPath = "";
@@ -491,6 +495,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C354AFDA2B67272B008F4C9C /* XCRemoteSwiftPackageReference "Surge" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jounce/Surge";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
 		C3660C6A2B5B95F000873942 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
@@ -510,6 +522,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C354AFDD2B67378D008F4C9C /* Surge */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C354AFDA2B67272B008F4C9C /* XCRemoteSwiftPackageReference "Surge" */;
+			productName = Surge;
+		};
 		C3660C6B2B5B95F000873942 /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C3660C6A2B5B95F000873942 /* XCRemoteSwiftPackageReference "swift-collections" */;

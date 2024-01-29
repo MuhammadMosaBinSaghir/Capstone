@@ -10,7 +10,12 @@ protocol Positionable {
     var x: Float { get set }
     var y: Float { get set }
     init(_ x: Float, _ y: Float)
+    static var zero: Self { get }
     func text(precision digits: Int) -> String
+    static func + (lhs: Self, rhs: Self) -> Self
+    static func - (lhs: Self, rhs: Self) -> Self
+    static func * (lhs: Float, rhs: Self) -> Self
+    static func / (lhs: Self, rhs: Float) -> Self
 }
 
 protocol SpatialCollection: BidirectionalCollection

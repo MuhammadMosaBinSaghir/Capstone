@@ -24,14 +24,26 @@ extension Array: SpatialCollection where Element: Positionable {
         path.closeSubpath()
         return path
     }
+    // assumes that the order of the list has meaning, such as you want when at 5, you want to sample 4 and 6 for example, even if 1 is closer in euclidyan distance. I.E. the points you gave are assumed to be sorted in terms of closest parametric distance.
+    // all other rules
+    // non-optimal because I can be using the FFT to get this down from O(km) to O^(k*log(k)). However that's really more useful for large window sizes where m -> k and where k -> ∞. k is not the widow size but the siuze of (lowerbound...upperbound) which is not equal to n, which is the input array. The worst case scenerio is w = k which is are both equal to n/2 + 1. So it'd be 0((n/2 + 1) * (n/2 + 1)) I think. It'd be 22 times faster on our array size of 200 at best and 87 times faster at worst.
     func convolve(with kernel: Kernel) -> Self? {
         guard self.count >= 3 else { return nil }
-        let window = kernel.window
-        let delimited = ((startIndex + 1)...(endIndex - 2)).map { self[$0] }
-        let abscissas = vDSP.convolve(delimited.map { $0.x }, withKernel: window)
-        let ordinates = vDSP.convolve(delimited.map { $0.y }, withKernel: window)
-        let elements = zip(abscissas, ordinates).map { Element($0, $1) }
-        return [self[0]] + elements + [self[endIndex - 1]]
+        guard kernel.count >= 3 else { return nil }
+        guard kernel.count % 2 == 1 else { return nil }
+        guard !kernel.weights.isEmpty else { return nil }
+        let firstIndex = startIndex, lastIndex = endIndex - 1, half = kernel.count/2
+        let lowerBound = firstIndex + half, upperBound = lastIndex - half
+        guard lowerBound <= upperBound else { return nil }
+        let weights = kernel.weights, summed = weights.reduce(0, +)
+        let convolved = (lowerBound...upperBound).map { i in
+            let selected = ((i - half)...(i + half)).map { self[$0] }
+            let weighted = selected.indices.map { weights[$0] * selected[$0] }
+            return weighted.reduce(Element.zero, +)/summed
+        }
+        let front = (firstIndex..<lowerBound).map { self[$0] }
+        let back = ((upperBound + 1)...lastIndex).map { self[$0] }
+        return front + convolved + back
     }
 }
 

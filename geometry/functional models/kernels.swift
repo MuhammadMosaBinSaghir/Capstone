@@ -6,7 +6,7 @@ struct Kernel {
     
     var type: Types
     var count: Index
-    var window: [Float] {
+    var weights: [Float] {
         switch type {
         case .box: return boxed()
         case .triangle: return triangular()
@@ -23,12 +23,12 @@ struct Kernel {
     }
     
     func triangular() -> [Float] {
-        guard count >= 2 else { return [] }
+        guard count >= 3 else { return [] }
         return (0..<count).map { 1 - abs(Float($0) - μ)/μ }
     }
     
     func gaussian(σ: Float) -> [Float] {
-        guard count >= 2 else { return [] }
+        guard count >= 3 else { return [] }
         let samples = stride(from: μ - 3*σ, through: μ + 3*σ, by: 6*σ/length)
         return samples.map { Float.Ν(x: $0, μ: μ, σ: σ) }
     }
