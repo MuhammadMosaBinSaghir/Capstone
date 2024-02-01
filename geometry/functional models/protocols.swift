@@ -22,7 +22,6 @@ protocol SpatialCollection: BidirectionalCollection
 where Element: Positionable, Index == Int {
     func path(in rect: CGRect) -> Path
     func text(precision digits: Int) -> String
-    func convolve(with kernel: Kernel) -> Self?
 }
 
 protocol OrderedCollection: BidirectionalCollection where Index == Int {

@@ -1,5 +1,4 @@
 import SwiftUI
-import Algorithms
 import Accelerate
 import OrderedCollections
 
@@ -24,26 +23,26 @@ extension Array: SpatialCollection where Element: Positionable {
         path.closeSubpath()
         return path
     }
-    // assumes that the order of the list has meaning, such as you want when at 5, you want to sample 4 and 6 for example, even if 1 is closer in euclidyan distance. I.E. the points you gave are assumed to be sorted in terms of closest parametric distance.
-    // all other rules
-    // non-optimal because I can be using the FFT to get this down from O(km) to O^(k*log(k)). However that's really more useful for large window sizes where m -> k and where k -> ∞. k is not the widow size but the siuze of (lowerbound...upperbound) which is not equal to n, which is the input array. The worst case scenerio is w = k which is are both equal to n/2 + 1. So it'd be 0((n/2 + 1) * (n/2 + 1)) I think. It'd be 22 times faster on our array size of 200 at best and 87 times faster at worst.
-    func convolve(with kernel: Kernel) -> Self? {
-        guard self.count >= 3 else { return nil }
-        guard kernel.count >= 3 else { return nil }
-        guard kernel.count % 2 == 1 else { return nil }
-        guard !kernel.weights.isEmpty else { return nil }
-        let firstIndex = startIndex, lastIndex = endIndex - 1, half = kernel.count/2
-        let lowerBound = firstIndex + half, upperBound = lastIndex - half
-        guard lowerBound <= upperBound else { return nil }
-        let weights = kernel.weights, summed = weights.reduce(0, +)
-        let convolved = (lowerBound...upperBound).map { i in
-            let selected = ((i - half)...(i + half)).map { self[$0] }
-            let weighted = selected.indices.map { weights[$0] * selected[$0] }
-            return weighted.reduce(Element.zero, +)/summed
+    func smoothen(by λ: Float, repetitions: Int) -> Self {
+        guard !λ.isZero else { return self }
+        guard λ > 0 && repetitions >= 1 else { return Self() }
+        let count = (long: self.count, short: Int32(self.count))
+        let factorized =
+        SparseOpaqueFactorization_Float.Laplacian(factor: λ, size: count.long)
+        var p = self.map { $0.x } + self.map { $0.y }
+        let size = p.count
+        (1...repetitions).forEach { _ in
+            let q = [Float](unsafeUninitializedCapacity: 2 * count.long) { buffer, sized in
+                p.withUnsafeMutableBufferPointer { pointer in
+                    let P = DenseMatrix_Float(rowCount: count.short, columnCount: 2, columnStride: count.short, attributes: SparseAttributes_t(), data: pointer.baseAddress!)
+                    let Q = DenseMatrix_Float(rowCount: count.short, columnCount: 2, columnStride: count.short, attributes: SparseAttributes_t(), data: buffer.baseAddress!)
+                    SparseSolve(factorized, P, Q)
+                    sized = size
+                }
+            }
+            p = q
         }
-        let front = (firstIndex..<lowerBound).map { self[$0] }
-        let back = ((upperBound + 1)...lastIndex).map { self[$0] }
-        return front + convolved + back
+        return self.indices.map { Element(p[$0], p[count.long + $0]) }
     }
 }
 
@@ -52,11 +51,6 @@ extension OrderedSet: SpatialCollection where Element: Positionable {
         self.elements.text(precision: digits)
     }
     func path(in rect: CGRect) -> Path { self.elements.path(in: rect) }
-    func convolve(with kernel: Kernel) -> Self? {
-        guard let convolved = self.elements.convolve(with: kernel)
-        else { return nil }
-        return OrderedSet(convolved)
-    }
 }
 
 extension Loop: SpatialCollection {
@@ -64,23 +58,5 @@ extension Loop: SpatialCollection {
     
     func text(precision digits: Int = 6) -> String {
         self.points.text(precision: digits)
-    }
-    
-    //MAkE SURE all collections [3]
-    
-    func convolve(with kernel: Kernel) -> Self? {
-        let extremities = leading.union(trailing).sorted()
-        guard let last = extremities.last else { return nil }
-        let paired = extremities.adjacentPairs().map { $0.0...$0.1 }
-        let closed = paired + [last...endIndex]
-        let convolved = closed.reduce(into: [Point]()) { points, range in
-            let mapped = range.map { self[$0] }
-            guard let convolved = mapped.convolve(with: kernel) else {
-                points.append(contentsOf: mapped)
-                return
-            }
-            points.append(contentsOf: convolved)
-        }
-        return Loop(OrderedSet(convolved))
     }
 }

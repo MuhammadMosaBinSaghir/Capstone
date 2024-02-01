@@ -1,10 +1,6 @@
 import Foundation
 
 extension Loop {
-    /// Determines which interior angles make up a loop.
-    func angles() -> [Angle] {
-        return self.indices.map { self[$0 - 1].dot(self[$0 + 1], from: self[$0]) }
-    }
     /// Determines the areas formed by each point and its immediate neighbors.
     func areas() -> [Area] {
         self.indices.map { self[$0 - 1].area(to: self[$0 + 1], from: self[$0]) }

@@ -27,10 +27,3 @@ extension Double: Exponentiable {
     static func ** (_ lhs: Self, _ rhs: Self) -> Self { pow(lhs, rhs) }
     static prefix func √ (_ radicand: Self) -> Self { sqrt(radicand) }
 }
-
-extension Exponentiable {
-    static func Ν(x: Self, μ: Self, σ: Self) -> Self {
-        let exponent = (-1 * (((x - μ)/σ) ** 2)/2)
-        return Self.e ** exponent / (σ * √(2*Self.pi))
-    }
-}
