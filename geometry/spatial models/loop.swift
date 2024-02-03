@@ -5,9 +5,10 @@ import OrderedCollections
 ///
 /// Loops are immutable collections of points that represent closed discrete curves. The points within a loop are unique and ordered in an anticlockwise manner. The lengths of the loops are always normalized, ensuring that all x-coordinates fall within the range [0, 1].
 ///
+/// - Note: Loops enclose non-zero areas.
 /// - Note: Loops are defined by at least 3 unique coordinates.
 
-struct Loop: Hashable, Shape {
+struct Loop: Hashable {
     typealias Index = Int
     typealias Element = Point
 
@@ -32,6 +33,10 @@ struct Loop: Hashable, Shape {
     let endIndex: Index
 
     @frozen enum Orientation { case clockwise, anticlockwise }
+    @frozen enum Precondition: String, CaseIterable {
+        case orientable = "Loops enclose non-zero areas."
+        case shape = "Loops are defined by at least 3 unique coordinates."
+    }
     struct Area: Hashable {
         let magnitude: Float, orientation: Orientation
         init(_ area: Float) {
@@ -44,12 +49,14 @@ struct Loop: Hashable, Shape {
         }
     }
     
-    /// Conditionally initializes a loop from an ordered set of points.
+    /// Initializes a loop from an ordered set of points.
+    /// - Note: Loops enclose non-zero areas.
     /// - Note: Loops are defined by at least 3 unique coordinates.
-    init?(_ set: OrderedSet<Point>) {
-        guard set.count >= 3 else { return nil }
-        guard let area = set.area() else { return nil }
-        let oriented = set.oriented(as: .anticlockwise, given: area)
+    init(_ set: OrderedSet<Point>) {
+        precondition(set.count >= 3, Precondition.shape.rawValue)
+        let area = set.area()
+        precondition(area != nil, Precondition.orientable.rawValue)
+        let oriented = set.oriented(as: .anticlockwise, given: area!)
         let abscissed = oriented.enumerated().sorted { $0.element.x < $1.element.x }
         let front = abscissed.first!, back = abscissed.last!, count = oriented.count
         let offset = oriented.indices.map { oriented[($0 + back.offset)%count] }
@@ -66,7 +73,7 @@ struct Loop: Hashable, Shape {
         self.trailing = OrderedSet(trailing)
         self.chord = normalized[trailing[0]].distance(to: normalized[leading[0]])
         self.ordinates = ordinated.first!.y...ordinated.last!.y
-        self.area = Area(area.magnitude/(length*length), oriented: .anticlockwise)
+        self.area = Area(area!.magnitude/(length*length), oriented: .anticlockwise)
     }
     
     func index(after i: Index) -> Index { points.index(after: i) }
@@ -80,11 +87,4 @@ struct Loop: Hashable, Shape {
     /// A loop equals another loop when both represent a single polygon that lies on a single plane.
     static func == (lhs: Loop, rhs: Loop) -> Bool { lhs.points == rhs.points }
     func hash(into hasher: inout Hasher) { hasher.combine(points) }
-    
-    func path(in rect: CGRect) -> Path { self.points.path(in: rect) }
-    
-    func path(in rect: CGRect, anchor: Loop.Index) -> Path {
-        let anchored = self.map { Point(x: $0.x, y: $0.y - self[anchor].y) }
-        return anchored.path(in: rect)
-    }
 }

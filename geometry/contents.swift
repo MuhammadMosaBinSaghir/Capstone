@@ -1,25 +1,16 @@
 import SwiftUI
 
 struct Contents: View {
-    @State var λ = 10.0
-    @State var I = 10.0
+    @State var plane: Float = 0
+    @State var smoothness: Float = 0
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 6)
-                .fill(.clear)
-            VStack {
-                Loop(smoothen(points[0], λ: λ, I: Int(I)))!
-                    .stroke(.primary)
-                    .animation(.default, value: λ)
-                    .animation(.default, value: I)
-                Slider(value: $λ, in: 0...100, step: 5)
-                Slider(value: $I, in: 1...100, step: 5)
-            }
-            .onAppear {
-                print(points[0].smoothen(by: 1, repetitions: 12).text())
-                //print(smoothen(points[0], λ: 1, I: 12).text())
-            }
+        VStack {
+            Volume(wing.label, with: wing.loops, at: wing.planes, showing: plane, smoothness: smoothness)!
+            .animation(.default, value: plane)
+            .animation(.default, value: smoothness)
+            Slider(value: $plane, in: 0...1)
+            Slider(value: $smoothness, in: 0...100)
         }
         .padding(6)
         .transparent()

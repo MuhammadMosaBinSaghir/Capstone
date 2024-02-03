@@ -1,4 +1,4 @@
-import SwiftUI
+import Foundation
 
 protocol Exponentiable: FloatingPoint {
     static var e: Self { get }
@@ -20,7 +20,7 @@ protocol Positionable {
 
 protocol SpatialCollection: BidirectionalCollection
 where Element: Positionable, Index == Int {
-    func path(in rect: CGRect) -> Path
+    func smoothen(by λ: Float) -> [Element]
     func text(precision digits: Int) -> String
 }
 

@@ -1,6 +1,6 @@
 import Foundation
 
-let points = 
+let replicated =
 [
     [Point(1.00000, -0.0755295),
      Point(0.989341, -0.0743025),
