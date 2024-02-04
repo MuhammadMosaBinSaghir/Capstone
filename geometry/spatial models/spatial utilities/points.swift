@@ -1,4 +1,4 @@
-import MetalKit
+import simd
 import Foundation
 
 typealias Point = simd_float2

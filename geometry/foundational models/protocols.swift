@@ -18,6 +18,15 @@ protocol Positionable {
     static func / (lhs: Self, rhs: Float) -> Self
 }
 
+protocol Projection { var transform: Transform { get } }
+
+protocol Transformable {
+    var scale: Float { get set }
+    var rotation: Angle { get set }
+    var position: Coordinate { get set }
+    var transform: Transform { get }
+}
+
 protocol SpatialCollection: BidirectionalCollection
 where Element: Positionable, Index == Int {
     func smoothen(by λ: Float) -> [Element]

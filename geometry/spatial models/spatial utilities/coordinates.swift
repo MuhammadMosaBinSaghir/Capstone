@@ -1,5 +1,4 @@
-import MetalKit
-import Foundation
+import simd
 
 typealias Coordinate = simd_float3
 

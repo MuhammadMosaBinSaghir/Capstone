@@ -1,15 +1,4 @@
 import Foundation
-import OrderedCollections
-
-extension Array: OrderedCollection {
-    func emptied() -> Self { [Element]() }
-    func inversed() -> Self { self.reversed() }
-}
-
-extension OrderedSet: OrderedCollection {
-    func emptied() -> Self { OrderedSet<Element>() }
-    func inversed() -> Self { OrderedSet(self.reversed()) }
-}
 
 extension OrderedCollection where Element == Point {
     func area() -> Loop.Area? {

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct Contents: View {
     var body: some View {
-        Volume(from: test)
+        Volume(from: wing)
         .padding(6)
         .transparent()
         .ignoresSafeArea()

@@ -60,8 +60,10 @@ struct CrossSection: Shape {
     func graph(in rect: CGRect, at plane: Float, smoothness λ: Float = .zero) -> [CGPoint] {
         let points = loop(at: plane, smoothness: λ)
         let leading = CGPoint(x: rect.minX, y: rect.midY)
-        let scaled = points.map { $0 * rect.width.vectored() + leading.vectored() }
-        let flipped = scaled.map { Point(x: $0.x, y: rect.maxY.vectored() - $0.y) }
+        let scaled = points.map { $0 * rect.width.ungraphed() + leading.vectored() }
+        let flipped = scaled.map {
+            Point(x: $0.x, y: rect.maxY.ungraphed() - $0.y)
+        }
         return flipped.map { $0.graphed() }
     }
     

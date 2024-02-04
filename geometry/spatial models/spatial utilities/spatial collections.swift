@@ -1,6 +1,25 @@
 import Accelerate
 import OrderedCollections
 
+extension Collection where Element == Loop, Index == Int {
+    func decimated<C: Collection>(with attributes: C) -> (loops: [Element], attributes: [C.Element])? where C.Index == Int {
+        guard !self.isEmpty && self.count == attributes.count else { return nil }
+        let (jagged, minimum, _) = self.isJagged()
+        guard let downsized = minimum else { return nil }
+        guard jagged
+        else { return (Array(self), Array(attributes)) }
+        let zipped = zip(self, attributes).compactMap { (loop, plane) in
+            let count = loop.count
+            guard count != minimum else { return (loop, plane) }
+            guard let decimated = loop.decimated(removing: count - downsized)
+            else { return nil }
+            return (decimated, plane)
+        }
+        guard !zipped.isEmpty else { return nil }
+        return (zipped.map { $0.0 }, zipped.map { $0.1 })
+    }
+}
+
 extension Array: SpatialCollection where Element: Positionable {
     func text(precision digits: Int = 6) -> String {
         let points = self.map { $0.text(precision: digits) }

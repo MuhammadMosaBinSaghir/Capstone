@@ -1,6 +1,14 @@
 import MetalKit
 
-struct Mesh {
+struct Mesh: Transformable {
+    var scale: Float = 1
+    var position = Coordinate(x: 0, y: -0.25, z: 0)
+    var rotation = Angle(.degrees, x: -45, y: -45, z: 0)
+    
+    var transform: Transform {
+        .init(scale: scale, rotation: rotation, position: position)
+    }
+    
     /// The vertices derived from the volume's cross-section representation.
     let vertices: (elements: [Coordinate], buffer: MTLBuffer)
     /// The employed vertex structure

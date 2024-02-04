@@ -1,7 +1,9 @@
 #include <metal_stdlib>
+#import "uniforms.h"
 using namespace metal;
 
-vertex float4 vertexed(float4 position [[attribute(0)]] [[stage_in]]) {
+vertex float4 vertexed(float4 coordinates [[attribute(0)]] [[stage_in]], constant Uniforms &uniforms [[buffer(1)]]) {
+    float4 position = uniforms.projection * uniforms.view * uniforms.model * coordinates;
     return position;
 }
 
