@@ -36,9 +36,14 @@
 		C38545812B6F1EE500F3F0CD /* angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545802B6F1EE500F3F0CD /* angle.swift */; };
 		C38545832B6FBB3200F3F0CD /* projections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545822B6FBB3200F3F0CD /* projections.swift */; };
 		C38545862B6FC5C800F3F0CD /* uniformss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545852B6FC5C800F3F0CD /* uniformss.swift */; };
+		C38545882B702BB500F3F0CD /* button styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545872B702BB500F3F0CD /* button styles.swift */; };
+		C385458A2B7060BB00F3F0CD /* popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545892B7060BB00F3F0CD /* popover.swift */; };
+		C385458D2B70779000F3F0CD /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = C385458C2B70779000F3F0CD /* Sliders */; };
+		C385458F2B707F9600F3F0CD /* shape styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C385458E2B707F9600F3F0CD /* shape styles.swift */; };
+		C38545912B7087D900F3F0CD /* sliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545902B7087D900F3F0CD /* sliders.swift */; };
 		C3E2FC042B647BE600A3006A /* core graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC032B647BE600A3006A /* core graphics.swift */; };
-		C3E2FC072B64927200A3006A /* transparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC062B64927200A3006A /* transparent.swift */; };
-		C3E2FC092B64947E00A3006A /* modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC082B64947E00A3006A /* modifiers.swift */; };
+		C3E2FC072B64927200A3006A /* modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC062B64927200A3006A /* modifiers.swift */; };
+		C3E2FC092B64947E00A3006A /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC082B64947E00A3006A /* view.swift */; };
 		C3E2FC0B2B64B82500A3006A /* positionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC0A2B64B82500A3006A /* positionable.swift */; };
 		C3F461872B1279E400E595D5 /* app.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F461862B1279E400E595D5 /* app.swift */; };
 		C3F461892B1279E400E595D5 /* contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F461882B1279E400E595D5 /* contents.swift */; };
@@ -74,9 +79,13 @@
 		C38545822B6FBB3200F3F0CD /* projections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projections.swift; sourceTree = "<group>"; };
 		C38545842B6FBF8700F3F0CD /* uniforms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uniforms.h; sourceTree = "<group>"; };
 		C38545852B6FC5C800F3F0CD /* uniformss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uniformss.swift; sourceTree = "<group>"; };
+		C38545872B702BB500F3F0CD /* button styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "button styles.swift"; sourceTree = "<group>"; };
+		C38545892B7060BB00F3F0CD /* popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popover.swift; sourceTree = "<group>"; };
+		C385458E2B707F9600F3F0CD /* shape styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "shape styles.swift"; sourceTree = "<group>"; };
+		C38545902B7087D900F3F0CD /* sliders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sliders.swift; sourceTree = "<group>"; };
 		C3E2FC032B647BE600A3006A /* core graphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "core graphics.swift"; sourceTree = "<group>"; };
-		C3E2FC062B64927200A3006A /* transparent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transparent.swift; sourceTree = "<group>"; };
-		C3E2FC082B64947E00A3006A /* modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modifiers.swift; sourceTree = "<group>"; };
+		C3E2FC062B64927200A3006A /* modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modifiers.swift; sourceTree = "<group>"; };
+		C3E2FC082B64947E00A3006A /* view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view.swift; sourceTree = "<group>"; };
 		C3E2FC0A2B64B82500A3006A /* positionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = positionable.swift; sourceTree = "<group>"; };
 		C3F461832B1279E400E595D5 /* geometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F461862B1279E400E595D5 /* app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app.swift; sourceTree = "<group>"; };
@@ -92,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3660C6C2B5B95F000873942 /* Collections in Frameworks */,
+				C385458D2B70779000F3F0CD /* Sliders in Frameworks */,
 				C3660C6E2B5B95F000873942 /* DequeModule in Frameworks */,
 				C3660C702B5B95F000873942 /* OrderedCollections in Frameworks */,
 			);
@@ -174,7 +184,10 @@
 		C385457A2B6F19C100F3F0CD /* view utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C38545872B702BB500F3F0CD /* button styles.swift */,
+				C385458E2B707F9600F3F0CD /* shape styles.swift */,
 				C3E2FC032B647BE600A3006A /* core graphics.swift */,
+				C3E2FC082B64947E00A3006A /* view.swift */,
 			);
 			path = "view utilities";
 			sourceTree = "<group>";
@@ -192,8 +205,9 @@
 		C3E2FC052B64925100A3006A /* view models */ = {
 			isa = PBXGroup;
 			children = (
-				C3E2FC082B64947E00A3006A /* modifiers.swift */,
-				C3E2FC062B64927200A3006A /* transparent.swift */,
+				C3E2FC062B64927200A3006A /* modifiers.swift */,
+				C38545902B7087D900F3F0CD /* sliders.swift */,
+				C38545892B7060BB00F3F0CD /* popover.swift */,
 				C33407C82B6E1801006D00C8 /* volume.swift */,
 				C385457A2B6F19C100F3F0CD /* view utilities */,
 			);
@@ -251,6 +265,7 @@
 				C3660C6B2B5B95F000873942 /* Collections */,
 				C3660C6D2B5B95F000873942 /* DequeModule */,
 				C3660C6F2B5B95F000873942 /* OrderedCollections */,
+				C385458C2B70779000F3F0CD /* Sliders */,
 			);
 			productName = geometry;
 			productReference = C3F461832B1279E400E595D5 /* geometry.app */;
@@ -282,6 +297,7 @@
 			mainGroup = C3F4617A2B1279E400E595D5;
 			packageReferences = (
 				C3660C6A2B5B95F000873942 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				C385458B2B70779000F3F0CD /* XCRemoteSwiftPackageReference "swiftui-sliders" */,
 			);
 			productRefGroup = C3F461842B1279E400E595D5 /* Products */;
 			projectDirPath = "";
@@ -312,11 +328,11 @@
 				C3F461892B1279E400E595D5 /* contents.swift in Sources */,
 				C33407C72B6E10CA006D00C8 /* cross-sections.swift in Sources */,
 				C33407CB2B6E25F5006D00C8 /* mesh.swift in Sources */,
-				C3E2FC072B64927200A3006A /* transparent.swift in Sources */,
+				C3E2FC072B64927200A3006A /* modifiers.swift in Sources */,
 				C33407C92B6E1801006D00C8 /* volume.swift in Sources */,
 				C3E2FC042B647BE600A3006A /* core graphics.swift in Sources */,
 				C33407D02B6E3833006D00C8 /* vertex descriptors.swift in Sources */,
-				C3E2FC092B64947E00A3006A /* modifiers.swift in Sources */,
+				C3E2FC092B64947E00A3006A /* view.swift in Sources */,
 				C31372312B5C5FAF00A6AF7C /* spatial collections.swift in Sources */,
 				C3440FCF2B6217360058574F /* loops.swift in Sources */,
 				C3660C662B5B956100873942 /* protocols.swift in Sources */,
@@ -324,6 +340,8 @@
 				C33407CE2B6E2CD1006D00C8 /* shaders.metal in Sources */,
 				C33F8AA72B59EDFC00D50127 /* range.swift in Sources */,
 				C33407912B69F8A8006D00C8 /* points assets.swift in Sources */,
+				C385458A2B7060BB00F3F0CD /* popover.swift in Sources */,
+				C385458F2B707F9600F3F0CD /* shape styles.swift in Sources */,
 				C38545832B6FBB3200F3F0CD /* projections.swift in Sources */,
 				C38545862B6FC5C800F3F0CD /* uniformss.swift in Sources */,
 				C33407962B6C1546006D00C8 /* sparse matrices.swift in Sources */,
@@ -333,9 +351,11 @@
 				C3440FC92B6185C40058574F /* collections.swift in Sources */,
 				C33407982B6DBC2B006D00C8 /* wing assets.swift in Sources */,
 				C31372332B5C686E00A6AF7C /* points.swift in Sources */,
+				C38545912B7087D900F3F0CD /* sliders.swift in Sources */,
 				C3E2FC0B2B64B82500A3006A /* positionable.swift in Sources */,
 				C33F8AA32B59E87400D50127 /* cross-section.swift in Sources */,
 				C3758E8D2B5B54E0001C4D5F /* loop.swift in Sources */,
+				C38545882B702BB500F3F0CD /* button styles.swift in Sources */,
 				C38545812B6F1EE500F3F0CD /* angle.swift in Sources */,
 				C385457F2B6F1E2500F3F0CD /* quaternion.swift in Sources */,
 				C33407D32B6E3897006D00C8 /* renderer.swift in Sources */,
@@ -575,6 +595,14 @@
 				minimumVersion = 1.0.6;
 			};
 		};
+		C385458B2B70779000F3F0CD /* XCRemoteSwiftPackageReference "swiftui-sliders" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-sliders";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -592,6 +620,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C3660C6A2B5B95F000873942 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
+		};
+		C385458C2B70779000F3F0CD /* Sliders */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C385458B2B70779000F3F0CD /* XCRemoteSwiftPackageReference "swiftui-sliders" */;
+			productName = Sliders;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
