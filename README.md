@@ -1,4 +1,5 @@
-The CFD "Terminal" Script can:
+# The CFD "Terminal" Script pseudocode
+## File Management and running CFD
 - Prommpt the user to enter
   - The input directory (containing the config and mesh files)
   - The output directory (where the CFD results will be stored)
@@ -18,3 +19,5 @@ The CFD "Terminal" Script can:
     - config_CFS.cfg
   - Create a log file in the new folder in the output directory that contains the exit code
 - Once all meshes have been run, move the input files from the working directory back into the input directory
+
+## To be done next: Calculating Lift, Drag, and other fun things
