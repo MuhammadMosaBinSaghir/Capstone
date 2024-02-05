@@ -1,4 +1,4 @@
-# The CFD "Terminal" Script pseudocode
+# Pseudocode
 ## File Management and running CFD
 - Prommpt the user to enter
   - The input directory (containing the config and mesh files)
