@@ -1,6 +1,6 @@
 # Pseudocode
 ## File Management and running CFD
-- Prommpt the user to enter
+- Prompt the user to enter
   - The input directory (containing the config and mesh files)
   - The output directory (where the CFD results will be stored)
   - The number of cores
