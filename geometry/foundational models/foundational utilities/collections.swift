@@ -3,12 +3,12 @@ import OrderedCollections
 
 extension Array: OrderedCollection {
     func emptied() -> Self { [Element]() }
-    func inversed() -> Self { self.reversed() }
+    func reversal() -> Self { self.reversed() }
 }
 
 extension OrderedSet: OrderedCollection {
     func emptied() -> Self { OrderedSet<Element>() }
-    func inversed() -> Self { OrderedSet(self.reversed()) }
+    func reversal() -> Self { OrderedSet(self.reversed()) }
 }
 
 extension Collection where Element: Collection, Index == Int, Element.Index == Int {

@@ -21,13 +21,19 @@ extension Collection where Element == Loop, Index == Int {
 }
 
 extension Array: SpatialCollection where Element: Positionable {
-    func text(precision digits: Int = 6) -> String {
-        let points = self.map { $0.text(precision: digits) }
-        var text = points.reduce("[") { $0 + $1 }
-        text.removeLast()
-        text.append("]")
-        return text
+    struct Formatter<Output> { let format: ([Element]) -> Output }
+    
+    func formatted<Output>(_ formatter: Formatter<Output>) -> Output {
+        return formatter.format(self)
     }
+    
+    func inversed(close: Bool = false) -> Self {
+        var reversed: [Element] = self.reversed()
+        let last = reversed.removeLast()
+        let opened = [last] + reversed
+        return close ? opened + [last] : opened
+    }
+
     /// Smooths out a curve based on its Laplacian
     /// - Note: Coordinates are always projected back onto the XY-plane, losing their depth.
     func smoothen(by λ: Float) -> Self {
@@ -43,8 +49,10 @@ extension Array: SpatialCollection where Element: Positionable {
 }
 
 extension OrderedSet: SpatialCollection where Element: Positionable {
-    func text(precision digits: Int = 6) -> String {
-        self.elements.text(precision: digits)
+    struct Formatter<Output> { let format: (OrderedSet<Element>) -> Output }
+    
+    func formatted<Output>(_ formatter: Formatter<Output>) -> Output {
+        return formatter.format(self)
     }
     /// Smooths out a curve based on its Laplacian
     /// - Note: Coordinates are always projected back onto the XY-plane, losing their depth.
@@ -53,10 +61,6 @@ extension OrderedSet: SpatialCollection where Element: Positionable {
 
 extension Loop: SpatialCollection {
     init(_ points: [Point]) { self.init(OrderedSet(points)) }
-    
-    func text(precision digits: Int = 6) -> String {
-        self.points.text(precision: digits)
-    }
     /// Smooths out a curve based on its Laplacian
     /// - Note: Coordinates are always projected back onto the XY-plane, losing their depth.
     func smoothen(by λ: Float) -> [Point] { self.points.smoothen(by: λ) }

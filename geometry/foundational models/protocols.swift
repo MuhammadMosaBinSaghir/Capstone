@@ -11,11 +11,12 @@ protocol Positionable {
     var y: Float { get set }
     init(_ x: Float, _ y: Float)
     static var zero: Self { get }
-    func text(precision digits: Int) -> String
     static func + (lhs: Self, rhs: Self) -> Self
     static func - (lhs: Self, rhs: Self) -> Self
     static func * (lhs: Float, rhs: Self) -> Self
     static func / (lhs: Self, rhs: Float) -> Self
+    func commaed(precision digits: Int) -> String
+    func parenthesized(precision digits: Int) -> String
 }
 
 protocol Projection { var transform: Transform { get } }
@@ -30,11 +31,10 @@ protocol Transformable {
 protocol SpatialCollection: BidirectionalCollection
 where Element: Positionable, Index == Int {
     func smoothen(by λ: Float) -> [Element]
-    func text(precision digits: Int) -> String
 }
 
 protocol OrderedCollection: BidirectionalCollection where Index == Int {
     associatedtype Element
     func emptied() -> Self
-    func inversed() -> Self
+    func reversal() -> Self
 }

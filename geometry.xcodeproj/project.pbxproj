@@ -11,14 +11,13 @@
 		C31372332B5C686E00A6AF7C /* points.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31372322B5C686E00A6AF7C /* points.swift */; };
 		C33407912B69F8A8006D00C8 /* points assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33407902B69F8A8006D00C8 /* points assets.swift */; };
 		C33407962B6C1546006D00C8 /* sparse matrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33407952B6C1546006D00C8 /* sparse matrices.swift */; };
-		C33407982B6DBC2B006D00C8 /* wing assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33407972B6DBC2B006D00C8 /* wing assets.swift */; };
-		C33407C72B6E10CA006D00C8 /* cross-sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33407C62B6E10CA006D00C8 /* cross-sections.swift */; };
+		C33407C72B6E10CA006D00C8 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33407C62B6E10CA006D00C8 /* models.swift */; };
 		C33407C92B6E1801006D00C8 /* volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33407C82B6E1801006D00C8 /* volume.swift */; };
 		C33407CB2B6E25F5006D00C8 /* mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33407CA2B6E25F5006D00C8 /* mesh.swift */; };
 		C33407CE2B6E2CD1006D00C8 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = C33407CD2B6E2CD1006D00C8 /* shaders.metal */; };
 		C33407D02B6E3833006D00C8 /* vertex descriptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33407CF2B6E3833006D00C8 /* vertex descriptors.swift */; };
 		C33407D32B6E3897006D00C8 /* renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33407D22B6E3897006D00C8 /* renderer.swift */; };
-		C33F8AA32B59E87400D50127 /* cross-section.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F8AA22B59E87400D50127 /* cross-section.swift */; };
+		C33F8AA32B59E87400D50127 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F8AA22B59E87400D50127 /* model.swift */; };
 		C33F8AA72B59EDFC00D50127 /* range.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F8AA62B59EDFC00D50127 /* range.swift */; };
 		C3440FC92B6185C40058574F /* collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3440FC82B6185C40058574F /* collections.swift */; };
 		C3440FCD2B62101C0058574F /* operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3440FCC2B62101C0058574F /* operators.swift */; };
@@ -40,7 +39,12 @@
 		C385458A2B7060BB00F3F0CD /* popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545892B7060BB00F3F0CD /* popover.swift */; };
 		C385458D2B70779000F3F0CD /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = C385458C2B70779000F3F0CD /* Sliders */; };
 		C385458F2B707F9600F3F0CD /* shape styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C385458E2B707F9600F3F0CD /* shape styles.swift */; };
-		C38545912B7087D900F3F0CD /* sliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545902B7087D900F3F0CD /* sliders.swift */; };
+		C38545912B7087D900F3F0CD /* selector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545902B7087D900F3F0CD /* selector.swift */; };
+		C3CE20792B71485500749EF1 /* spatial formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE20782B71485500749EF1 /* spatial formatters.swift */; };
+		C3CE207B2B71834D00749EF1 /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE207A2B71834D00749EF1 /* settings.swift */; };
+		C3CE207E2B718F8E00749EF1 /* cross-sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE207D2B718F8E00749EF1 /* cross-sections.swift */; };
+		C3CE20802B718FC200749EF1 /* settings key.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE207F2B718FC200749EF1 /* settings key.swift */; };
+		C3CE20822B7192BC00749EF1 /* documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE20812B7192BC00749EF1 /* documents.swift */; };
 		C3E2FC042B647BE600A3006A /* core graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC032B647BE600A3006A /* core graphics.swift */; };
 		C3E2FC072B64927200A3006A /* modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC062B64927200A3006A /* modifiers.swift */; };
 		C3E2FC092B64947E00A3006A /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC082B64947E00A3006A /* view.swift */; };
@@ -56,14 +60,13 @@
 		C31372322B5C686E00A6AF7C /* points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = points.swift; sourceTree = "<group>"; };
 		C33407902B69F8A8006D00C8 /* points assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "points assets.swift"; sourceTree = "<group>"; };
 		C33407952B6C1546006D00C8 /* sparse matrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "sparse matrices.swift"; sourceTree = "<group>"; };
-		C33407972B6DBC2B006D00C8 /* wing assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "wing assets.swift"; sourceTree = "<group>"; };
-		C33407C62B6E10CA006D00C8 /* cross-sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "cross-sections.swift"; sourceTree = "<group>"; };
+		C33407C62B6E10CA006D00C8 /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
 		C33407C82B6E1801006D00C8 /* volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = volume.swift; sourceTree = "<group>"; };
 		C33407CA2B6E25F5006D00C8 /* mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mesh.swift; sourceTree = "<group>"; };
 		C33407CD2B6E2CD1006D00C8 /* shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = shaders.metal; sourceTree = "<group>"; };
 		C33407CF2B6E3833006D00C8 /* vertex descriptors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "vertex descriptors.swift"; sourceTree = "<group>"; };
 		C33407D22B6E3897006D00C8 /* renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = renderer.swift; sourceTree = "<group>"; };
-		C33F8AA22B59E87400D50127 /* cross-section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "cross-section.swift"; sourceTree = "<group>"; };
+		C33F8AA22B59E87400D50127 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		C33F8AA62B59EDFC00D50127 /* range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = range.swift; sourceTree = "<group>"; };
 		C3440FC82B6185C40058574F /* collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collections.swift; sourceTree = "<group>"; };
 		C3440FCC2B62101C0058574F /* operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = operators.swift; sourceTree = "<group>"; };
@@ -82,7 +85,12 @@
 		C38545872B702BB500F3F0CD /* button styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "button styles.swift"; sourceTree = "<group>"; };
 		C38545892B7060BB00F3F0CD /* popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popover.swift; sourceTree = "<group>"; };
 		C385458E2B707F9600F3F0CD /* shape styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "shape styles.swift"; sourceTree = "<group>"; };
-		C38545902B7087D900F3F0CD /* sliders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sliders.swift; sourceTree = "<group>"; };
+		C38545902B7087D900F3F0CD /* selector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selector.swift; sourceTree = "<group>"; };
+		C3CE20782B71485500749EF1 /* spatial formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "spatial formatters.swift"; sourceTree = "<group>"; };
+		C3CE207A2B71834D00749EF1 /* settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
+		C3CE207D2B718F8E00749EF1 /* cross-sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "cross-sections.swift"; sourceTree = "<group>"; };
+		C3CE207F2B718FC200749EF1 /* settings key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "settings key.swift"; sourceTree = "<group>"; };
+		C3CE20812B7192BC00749EF1 /* documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documents.swift; sourceTree = "<group>"; };
 		C3E2FC032B647BE600A3006A /* core graphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "core graphics.swift"; sourceTree = "<group>"; };
 		C3E2FC062B64927200A3006A /* modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modifiers.swift; sourceTree = "<group>"; };
 		C3E2FC082B64947E00A3006A /* view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view.swift; sourceTree = "<group>"; };
@@ -137,7 +145,6 @@
 				C3F4618A2B1279E400E595D5 /* build assets.xcassets */,
 				C3F4618E2B1279E400E595D5 /* preview assets.xcassets */,
 				C33407902B69F8A8006D00C8 /* points assets.swift */,
-				C33407972B6DBC2B006D00C8 /* wing assets.swift */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -147,7 +154,6 @@
 			children = (
 				C38545802B6F1EE500F3F0CD /* angle.swift */,
 				C3758E8C2B5B54E0001C4D5F /* loop.swift */,
-				C33F8AA22B59E87400D50127 /* cross-section.swift */,
 				C33407CA2B6E25F5006D00C8 /* mesh.swift */,
 				C38545792B6F193200F3F0CD /* spatial utilities */,
 			);
@@ -174,9 +180,10 @@
 				C3440FD22B6357340058574F /* coordinates.swift */,
 				C385457E2B6F1E2500F3F0CD /* quaternion.swift */,
 				C3440FCE2B6217360058574F /* loops.swift */,
-				C33407C62B6E10CA006D00C8 /* cross-sections.swift */,
+				C33407C62B6E10CA006D00C8 /* models.swift */,
 				C3660C712B5B9E2800873942 /* ordered collections.swift */,
 				C31372302B5C5FAF00A6AF7C /* spatial collections.swift */,
+				C3CE20782B71485500749EF1 /* spatial formatters.swift */,
 			);
 			path = "spatial utilities";
 			sourceTree = "<group>";
@@ -202,11 +209,22 @@
 			path = "rendering utilities";
 			sourceTree = "<group>";
 		};
+		C3CE207C2B718F8200749EF1 /* observables */ = {
+			isa = PBXGroup;
+			children = (
+				C33F8AA22B59E87400D50127 /* model.swift */,
+				C3CE20812B7192BC00749EF1 /* documents.swift */,
+				C3CE207D2B718F8E00749EF1 /* cross-sections.swift */,
+				C3CE207F2B718FC200749EF1 /* settings key.swift */,
+			);
+			path = observables;
+			sourceTree = "<group>";
+		};
 		C3E2FC052B64925100A3006A /* view models */ = {
 			isa = PBXGroup;
 			children = (
 				C3E2FC062B64927200A3006A /* modifiers.swift */,
-				C38545902B7087D900F3F0CD /* sliders.swift */,
+				C38545902B7087D900F3F0CD /* selector.swift */,
 				C38545892B7060BB00F3F0CD /* popover.swift */,
 				C33407C82B6E1801006D00C8 /* volume.swift */,
 				C385457A2B6F19C100F3F0CD /* view utilities */,
@@ -235,7 +253,9 @@
 			children = (
 				C3F461862B1279E400E595D5 /* app.swift */,
 				C3F461882B1279E400E595D5 /* contents.swift */,
+				C3CE207A2B71834D00749EF1 /* settings.swift */,
 				C377E5442B127A1900BF34ED /* assets */,
+				C3CE207C2B718F8200749EF1 /* observables */,
 				C3660C692B5B958000873942 /* foundational models */,
 				C3E2FC052B64925100A3006A /* view models */,
 				C377E5472B12939E00BF34ED /* spatial models */,
@@ -326,13 +346,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3F461892B1279E400E595D5 /* contents.swift in Sources */,
-				C33407C72B6E10CA006D00C8 /* cross-sections.swift in Sources */,
+				C33407C72B6E10CA006D00C8 /* models.swift in Sources */,
 				C33407CB2B6E25F5006D00C8 /* mesh.swift in Sources */,
 				C3E2FC072B64927200A3006A /* modifiers.swift in Sources */,
 				C33407C92B6E1801006D00C8 /* volume.swift in Sources */,
+				C3CE20792B71485500749EF1 /* spatial formatters.swift in Sources */,
 				C3E2FC042B647BE600A3006A /* core graphics.swift in Sources */,
 				C33407D02B6E3833006D00C8 /* vertex descriptors.swift in Sources */,
 				C3E2FC092B64947E00A3006A /* view.swift in Sources */,
+				C3CE20802B718FC200749EF1 /* settings key.swift in Sources */,
 				C31372312B5C5FAF00A6AF7C /* spatial collections.swift in Sources */,
 				C3440FCF2B6217360058574F /* loops.swift in Sources */,
 				C3660C662B5B956100873942 /* protocols.swift in Sources */,
@@ -340,26 +362,28 @@
 				C33407CE2B6E2CD1006D00C8 /* shaders.metal in Sources */,
 				C33F8AA72B59EDFC00D50127 /* range.swift in Sources */,
 				C33407912B69F8A8006D00C8 /* points assets.swift in Sources */,
+				C3CE20822B7192BC00749EF1 /* documents.swift in Sources */,
 				C385458A2B7060BB00F3F0CD /* popover.swift in Sources */,
 				C385458F2B707F9600F3F0CD /* shape styles.swift in Sources */,
 				C38545832B6FBB3200F3F0CD /* projections.swift in Sources */,
 				C38545862B6FC5C800F3F0CD /* uniformss.swift in Sources */,
 				C33407962B6C1546006D00C8 /* sparse matrices.swift in Sources */,
 				C3F461872B1279E400E595D5 /* app.swift in Sources */,
+				C3CE207E2B718F8E00749EF1 /* cross-sections.swift in Sources */,
 				C385457D2B6F1C2100F3F0CD /* transforms.swift in Sources */,
 				C3660C722B5B9E2800873942 /* ordered collections.swift in Sources */,
 				C3440FC92B6185C40058574F /* collections.swift in Sources */,
-				C33407982B6DBC2B006D00C8 /* wing assets.swift in Sources */,
 				C31372332B5C686E00A6AF7C /* points.swift in Sources */,
-				C38545912B7087D900F3F0CD /* sliders.swift in Sources */,
+				C38545912B7087D900F3F0CD /* selector.swift in Sources */,
 				C3E2FC0B2B64B82500A3006A /* positionable.swift in Sources */,
-				C33F8AA32B59E87400D50127 /* cross-section.swift in Sources */,
+				C33F8AA32B59E87400D50127 /* model.swift in Sources */,
 				C3758E8D2B5B54E0001C4D5F /* loop.swift in Sources */,
 				C38545882B702BB500F3F0CD /* button styles.swift in Sources */,
 				C38545812B6F1EE500F3F0CD /* angle.swift in Sources */,
 				C385457F2B6F1E2500F3F0CD /* quaternion.swift in Sources */,
 				C33407D32B6E3897006D00C8 /* renderer.swift in Sources */,
 				C3440FD32B6357340058574F /* coordinates.swift in Sources */,
+				C3CE207B2B71834D00749EF1 /* settings.swift in Sources */,
 				C3440FCD2B62101C0058574F /* operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

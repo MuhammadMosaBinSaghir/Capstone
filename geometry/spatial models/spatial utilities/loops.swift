@@ -1,9 +1,25 @@
 import Foundation
 
 extension Loop {
+    struct Formatter<Output> { let format: (Loop) -> Output }
+    
+    func formatted<Output>(_ formatter: Formatter<Output>) -> Output {
+        return formatter.format(self)
+    }
+}
+
+extension Loop {
     /// Determines the areas formed by each point and its immediate neighbors.
     func areas() -> [Area] {
         self.indices.map { self[$0 - 1].area(to: self[$0 + 1], from: self[$0]) }
+    }
+    
+    func headfirst() -> [Point] {
+        self.indices.map { self[self.leading[0] + $0] }
+    }
+    
+    func clockwised(close: Bool = false) -> [Point] {
+        self.points.elements.inversed(close: close)
     }
     /// Decimates the loop by removing a given number of points.
     ///

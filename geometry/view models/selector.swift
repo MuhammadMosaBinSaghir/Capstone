@@ -1,10 +1,11 @@
 import SwiftUI
 import Sliders
 
-struct Sliders: View {
+struct CrossSectionSelector: View {
+    @Bindable private var sections: CrossSections
     @Environment(\.colorScheme) var scheme
     
-    @State var range: ClosedRange<Float> = 0.25...0.75
+    init(_ sections: CrossSections) { self.sections = sections }
     
     @ViewBuilder private func contained() -> some View {
         RoundedRectangle(cornerRadius: 6).fill(.white).opacity(1)
@@ -23,7 +24,7 @@ struct Sliders: View {
     }
     
     var body: some View {
-        RangeSlider(range: $range, in: 0...1, distance: 0.25...0.5)
+        RangeSlider(range: $sections.region, in: 0...1, distance: 0.25...0.5)
             .rangeSliderStyle(
                 HorizontalRangeSliderStyle(
                     track:

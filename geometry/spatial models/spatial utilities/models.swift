@@ -1,9 +1,9 @@
 import Foundation
 
-extension CrossSection {
+extension Model {
     func vertices() -> [Coordinate] {
         self.loops.indices.reduce(into: [Coordinate]()) { coordinates, i in
-            coordinates += loops[i].map { $0.projected(onto: self.planes[i]) }
+            coordinates += loops[i].map { $0.projected(onto: self.sections[i]) }
         }
     }
     

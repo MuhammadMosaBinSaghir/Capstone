@@ -10,7 +10,7 @@ class Renderer: NSObject {
 
     enum Errors: Error { case device, queue, mesh, library, pipeline, buffer }
     
-    init?(from section: CrossSection, to view: MTKView, refresh frames: UInt8) throws {
+    init?(from section: Model, to view: MTKView, refresh frames: UInt8) throws {
         guard let device = MTLCreateSystemDefaultDevice()
         else { throw Errors.device }
         guard let queue = device.makeCommandQueue()

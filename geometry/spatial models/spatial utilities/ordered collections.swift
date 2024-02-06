@@ -21,13 +21,13 @@ extension OrderedCollection where Element == Point {
     func oriented(as desired: Loop.Orientation, given area: Loop.Area) -> Self {
         switch area.orientation == desired {
         case true: return self
-        case false: return self.inversed()
+        case false: return self.reversal()
         }
     }
     func oriented(to: Loop.Orientation, from: Loop.Orientation) -> Self {
         switch from == to {
         case true: return self
-        case false: return self.inversed()
+        case false: return self.reversal()
         }
     }
     func oriented(as desired: Loop.Orientation) -> Self {

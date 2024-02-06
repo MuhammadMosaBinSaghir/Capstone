@@ -9,7 +9,7 @@ struct Volume: View {
         Representable(view: $view)
     }
     
-    init(from section: CrossSection, refresh frames: UInt8 = 120) {
+    init(from section: Model, refresh frames: UInt8 = 120) {
         let view = MTKView()
         self.renderer = try? Renderer(from: section, to: view, refresh: frames)
         self.view = view
