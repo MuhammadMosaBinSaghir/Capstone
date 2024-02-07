@@ -12,13 +12,31 @@ import javax.swing.JOptionPane;
 public class Driver {
 	
 	public static void main(String[] args) {
+		
+		/*** SETTING UP VARIABLES AND MOVING FILES ***/
+		
+		// Variable definition
+		String inputPath;
+		String outputPath;
+		String cores;
+		int availableCores;
+		String workingPath;
+		String solverPath;
+		String[] files;
+		String config = null;
+		String[] meshes;
+		int meshNumber;
+		int exit[];
+		
 		// Ask user to choose the input directory
 		final JFileChooser inputChooser = new JFileChooser();
-		JOptionPane.showMessageDialog(null, "Please select the input directory from the following window.");
+		JOptionPane.showMessageDialog(null, "Please select the input directory from the following window.\n"
+				+ "IMPORTANT NOTE: THE INPUT DIRECTORY MUST ONLY CONTAIN MESHES (.su2) AND THE CONFIG FILE (.cfg)\n"
+				+ "ANY OTHER FILE OR FOLER INCLUDED WILL ALSO BE CONSIDERED AS AN INPUT AND COULD CAUSE THE PROGRAM TO CRASH.");
 		inputChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		inputChooser.setDialogTitle("SELECT THE INPUT DIRECTORY");
 		inputChooser.showOpenDialog(inputChooser);
-		String inputPath = inputChooser.getSelectedFile().getPath();
+		inputPath = inputChooser.getSelectedFile().getPath();
 		
 		// Ask user to choose the input directory
 		final JFileChooser outputChooser = new JFileChooser(inputPath);
@@ -26,11 +44,11 @@ public class Driver {
 		outputChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		outputChooser.setDialogTitle("SELECT THE OUTPUT DIRECTORY");
 		outputChooser.showOpenDialog(outputChooser);
-		String outputPath = outputChooser.getSelectedFile().getPath();
+		outputPath = outputChooser.getSelectedFile().getPath();
 		
 		// Ask the user to input the number of cores
-		String cores = null;
-		int availableCores = Runtime.getRuntime().availableProcessors();
+		cores = null;
+		availableCores = Runtime.getRuntime().availableProcessors();
 		while(true) {
 			cores = (String)JOptionPane.showInputDialog(
 					null,
@@ -43,11 +61,8 @@ public class Driver {
 		}
 		
 		// Other inputs and files
-		String workingPath = System.getProperty("user.dir");
-		String solverPath = System.getenv("SU2_RUN") + "\\parallel_computation.py";
-		String[] files;
-		String config = null;
-		String[] meshes;
+		workingPath = System.getProperty("user.dir");
+		solverPath = System.getenv("SU2_RUN") + "\\parallel_computation.py";
 		
 		// Read input folder and load all file names into "files" array
 		files = new File(inputPath).list();
@@ -64,6 +79,9 @@ public class Driver {
 			System.out.println("Error: Congifuration (.cfg) file not found.");
 			System.exit(-1);
 		}
+		
+		// Initialize the array containing the exit codes
+		exit = new int[files.length - 1];
 		
 		// Place the mesh files into the "meshes" array
 		meshes = new String[files.length - 1];
@@ -82,8 +100,10 @@ public class Driver {
 			new File(inputPath + "\\" + meshes[i]).renameTo(new File(workingPath + "\\" + meshes[i]));
 		}
 		
+		/*** RUNNING THE CFD ***/
+		
 		// The current mesh that is being run in the CFD
-		int meshNumber = 0;
+		meshNumber = 0;
 		
 		for(meshNumber = 0; meshNumber < meshes.length; meshNumber++) {
 			try {
@@ -122,7 +142,7 @@ public class Driver {
 				while((lines = error.readLine()) != null) {
 					System.out.println(lines);
 				}
-				int exit = solver.exitValue();
+				exit[meshNumber] = solver.exitValue();
 								
 				// Create output directory and copy output files from the working directory to the output folder
 				new File(outputPath + "\\" + meshes[meshNumber]).mkdir();
@@ -132,23 +152,30 @@ public class Driver {
 				new File(workingPath + "\\forces-breakdown.dat").renameTo(new File(outputPath + "\\" + meshes[meshNumber] + "\\forces-breakdown.dat"));
 				new File(workingPath + "\\config_CFD.cfg").renameTo(new File(outputPath + "\\" + meshes[meshNumber] + "\\config_CFD.cfg"));
 				
-				// Write to the log file
-				new File(outputPath + "\\" + meshes[meshNumber] + "\\log.txt").createNewFile();
-				BufferedWriter logWrite = new BufferedWriter(new FileWriter(outputPath + "\\" + meshes[meshNumber] + "\\log.txt"));
-				if(exit == 0) {
-					logWrite.write("CFD SUCCEEDED - EXIT VALUE " + exit);
-					logWrite.close();
-				} else if(exit == 1) {
-					logWrite.write("CFD FAILED - EXIT VALUE " + exit);
-					logWrite.close();
-				} else {
-					logWrite.write("CFD FAILED - EXIT VALUE " + exit);
-					logWrite.close();
-				}
-					
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+		
+		try {
+			// Write to the log file
+			new File(outputPath + "\\log.txt").createNewFile();
+			BufferedWriter logWrite = new BufferedWriter(new FileWriter(outputPath + "\\log.txt"));
+			
+			for(i = 0; i < meshes.length; i++) {
+				if(exit[i] == 0) {
+					logWrite.write(meshes[i] + ": CFD SUCCEEDED - EXIT VALUE " + exit[i] + "\n");
+				} else if(exit[i] == 1) {
+					logWrite.write(meshes[i] + ": CFD FAILED - EXIT VALUE " + exit[i] + "\n");
+				} else {
+					logWrite.write(meshes[i] + ": CFD FAILED - EXIT VALUE " + exit[i] + "\n");
+				}
+			}
+			
+			logWrite.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 		// Copy input files from the working directory back to the input folder
@@ -156,5 +183,10 @@ public class Driver {
 		for(i = 0; i < meshes.length; i++) {
 			new File(workingPath + "\\" + meshes[i]).renameTo(new File(inputPath + "\\" + meshes[i]));
 		}
+		
+		/*** ANALYSIS ***/
+		
+		//for(i = 0; i < meshes.length; i ++) {
+		//}
 	}
 }
