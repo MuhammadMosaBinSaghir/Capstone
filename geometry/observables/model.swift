@@ -26,7 +26,7 @@ import OrderedCollections
     
     /// Conditionally initializes a model from ordered loops and sections.
     /// - Note: Models are defined by at least 1 loop-section pair and contain the same number of loops as sections.
-    init?(_ label: String, with loops: [Loop], at sections: OrderedSet<Float>, smoothness λ: Float) {
+    init?(_ label: String, with loops: [Loop], at sections: OrderedSet<Float>, smoothness λ: Float = .zero) {
         self.label = label
         self.smoothness = λ
         guard let decimated = loops.decimated(with: sections) else { return nil }
@@ -51,12 +51,34 @@ import OrderedCollections
         return interpolated.map { $0.flat() }
     }
     
-    /*
-    func loops(from sections: CrossSections) -> [Loop] {
-        let filtered = self.sections.indices.filter { sections.region.contains(self.sections[$0])
+    func welp(maxDistances: [Float], smoothness λ: Float) -> [Bool] {
+        guard maxDistances.count == loops.count else { return [] }
+        let smooth = loops.map { $0.smoothen(by: λ) }.map { Loop($0) }
+        let alrigth = loops.indices.map { i in
+            let loop = loops[i]
+            let smooth = smooth[i]
+            let distances = loop.indices.map {
+                loop[$0].distance(to: smooth[$0])
+            }
+            return distances.allSatisfy { $0 <= maxDistances[i] }
         }
-        let smooth = filtered.map { self.loops[$0].smoothen(by: self.smoothness) }
-        return []
+        return alrigth
     }
-    */
+    
+    func welp(maxDistances: [Float], smoothness λ: [Float]) -> [Bool] {
+        guard maxDistances.count == loops.count else { return [] }
+        guard maxDistances.count == λ.count else { return [] }
+        let smooth = loops.indices.map {
+            loops[$0].smoothen(by: λ[$0])
+        }
+        let alrigth = loops.indices.map { i in
+            let loop = loops[i]
+            let smooth = smooth[i]
+            let distances = loop.indices.map {
+                loop[$0].distance(to: smooth[$0])
+            }
+            return distances.allSatisfy { $0 <= maxDistances[i] }
+        }
+        return alrigth
+    }
 }

@@ -8,7 +8,7 @@ struct CrossSectionSelector: View {
     init(_ sections: CrossSections) { self.sections = sections }
     
     @ViewBuilder private func contained() -> some View {
-        RoundedRectangle(cornerRadius: 6).fill(.white).opacity(1)
+        RoundedRectangle(cornerRadius: 3).fill(.white).opacity(1)
     }
     
     @ViewBuilder private func container() -> some View {
@@ -24,7 +24,7 @@ struct CrossSectionSelector: View {
     }
     
     var body: some View {
-        RangeSlider(range: $sections.region, in: 0...1, distance: 0.25...0.5)
+        RangeSlider(range: $sections.region, in: 0...1, distance: 0.25...1)
             .rangeSliderStyle(
                 HorizontalRangeSliderStyle(
                     track:
@@ -32,11 +32,12 @@ struct CrossSectionSelector: View {
                             view: gradient(),
                             mask: contained()
                         )
-                        .background(container()),
+                        .background(container())
+                        .frame(height: 32),
                     lowerThumb: contained(),
                     upperThumb: contained(),
-                    lowerThumbSize: CGSize(width: 7, height: 28),
-                    upperThumbSize: CGSize(width: 7, height: 28),
+                    lowerThumbSize: CGSize(width: 4, height: 32),
+                    upperThumbSize: CGSize(width: 4, height: 32),
                     options: .forceAdjacentValue
                 )
             )

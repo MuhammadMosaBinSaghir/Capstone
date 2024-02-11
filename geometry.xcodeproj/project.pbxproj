@@ -36,15 +36,16 @@
 		C38545832B6FBB3200F3F0CD /* projections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545822B6FBB3200F3F0CD /* projections.swift */; };
 		C38545862B6FC5C800F3F0CD /* uniformss.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545852B6FC5C800F3F0CD /* uniformss.swift */; };
 		C38545882B702BB500F3F0CD /* button styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545872B702BB500F3F0CD /* button styles.swift */; };
-		C385458A2B7060BB00F3F0CD /* popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545892B7060BB00F3F0CD /* popover.swift */; };
+		C385458A2B7060BB00F3F0CD /* document selector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545892B7060BB00F3F0CD /* document selector.swift */; };
 		C385458D2B70779000F3F0CD /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = C385458C2B70779000F3F0CD /* Sliders */; };
 		C385458F2B707F9600F3F0CD /* shape styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C385458E2B707F9600F3F0CD /* shape styles.swift */; };
-		C38545912B7087D900F3F0CD /* selector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545902B7087D900F3F0CD /* selector.swift */; };
+		C38545912B7087D900F3F0CD /* cross-section selector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38545902B7087D900F3F0CD /* cross-section selector.swift */; };
 		C3CE20792B71485500749EF1 /* spatial formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE20782B71485500749EF1 /* spatial formatters.swift */; };
 		C3CE207B2B71834D00749EF1 /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE207A2B71834D00749EF1 /* settings.swift */; };
 		C3CE207E2B718F8E00749EF1 /* cross-sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE207D2B718F8E00749EF1 /* cross-sections.swift */; };
 		C3CE20802B718FC200749EF1 /* settings key.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE207F2B718FC200749EF1 /* settings key.swift */; };
-		C3CE20822B7192BC00749EF1 /* documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE20812B7192BC00749EF1 /* documents.swift */; };
+		C3CE20822B7192BC00749EF1 /* document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE20812B7192BC00749EF1 /* document.swift */; };
+		C3CE20842B71FED800749EF1 /* text exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CE20832B71FED800749EF1 /* text exporter.swift */; };
 		C3E2FC042B647BE600A3006A /* core graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC032B647BE600A3006A /* core graphics.swift */; };
 		C3E2FC072B64927200A3006A /* modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC062B64927200A3006A /* modifiers.swift */; };
 		C3E2FC092B64947E00A3006A /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E2FC082B64947E00A3006A /* view.swift */; };
@@ -83,14 +84,16 @@
 		C38545842B6FBF8700F3F0CD /* uniforms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uniforms.h; sourceTree = "<group>"; };
 		C38545852B6FC5C800F3F0CD /* uniformss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uniformss.swift; sourceTree = "<group>"; };
 		C38545872B702BB500F3F0CD /* button styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "button styles.swift"; sourceTree = "<group>"; };
-		C38545892B7060BB00F3F0CD /* popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popover.swift; sourceTree = "<group>"; };
+		C38545892B7060BB00F3F0CD /* document selector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "document selector.swift"; sourceTree = "<group>"; };
 		C385458E2B707F9600F3F0CD /* shape styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "shape styles.swift"; sourceTree = "<group>"; };
-		C38545902B7087D900F3F0CD /* selector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selector.swift; sourceTree = "<group>"; };
+		C38545902B7087D900F3F0CD /* cross-section selector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "cross-section selector.swift"; sourceTree = "<group>"; };
+		C3CA32942B74433B00382E8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C3CE20782B71485500749EF1 /* spatial formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "spatial formatters.swift"; sourceTree = "<group>"; };
 		C3CE207A2B71834D00749EF1 /* settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
 		C3CE207D2B718F8E00749EF1 /* cross-sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "cross-sections.swift"; sourceTree = "<group>"; };
 		C3CE207F2B718FC200749EF1 /* settings key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "settings key.swift"; sourceTree = "<group>"; };
-		C3CE20812B7192BC00749EF1 /* documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = documents.swift; sourceTree = "<group>"; };
+		C3CE20812B7192BC00749EF1 /* document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = document.swift; sourceTree = "<group>"; };
+		C3CE20832B71FED800749EF1 /* text exporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "text exporter.swift"; sourceTree = "<group>"; };
 		C3E2FC032B647BE600A3006A /* core graphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "core graphics.swift"; sourceTree = "<group>"; };
 		C3E2FC062B64927200A3006A /* modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modifiers.swift; sourceTree = "<group>"; };
 		C3E2FC082B64947E00A3006A /* view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view.swift; sourceTree = "<group>"; };
@@ -213,7 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				C33F8AA22B59E87400D50127 /* model.swift */,
-				C3CE20812B7192BC00749EF1 /* documents.swift */,
+				C3CE20812B7192BC00749EF1 /* document.swift */,
 				C3CE207D2B718F8E00749EF1 /* cross-sections.swift */,
 				C3CE207F2B718FC200749EF1 /* settings key.swift */,
 			);
@@ -223,9 +226,10 @@
 		C3E2FC052B64925100A3006A /* view models */ = {
 			isa = PBXGroup;
 			children = (
+				C38545902B7087D900F3F0CD /* cross-section selector.swift */,
+				C38545892B7060BB00F3F0CD /* document selector.swift */,
+				C3CE20832B71FED800749EF1 /* text exporter.swift */,
 				C3E2FC062B64927200A3006A /* modifiers.swift */,
-				C38545902B7087D900F3F0CD /* selector.swift */,
-				C38545892B7060BB00F3F0CD /* popover.swift */,
 				C33407C82B6E1801006D00C8 /* volume.swift */,
 				C385457A2B6F19C100F3F0CD /* view utilities */,
 			);
@@ -251,6 +255,7 @@
 		C3F461852B1279E400E595D5 /* geometry */ = {
 			isa = PBXGroup;
 			children = (
+				C3CA32942B74433B00382E8D /* Info.plist */,
 				C3F461862B1279E400E595D5 /* app.swift */,
 				C3F461882B1279E400E595D5 /* contents.swift */,
 				C3CE207A2B71834D00749EF1 /* settings.swift */,
@@ -351,6 +356,7 @@
 				C3E2FC072B64927200A3006A /* modifiers.swift in Sources */,
 				C33407C92B6E1801006D00C8 /* volume.swift in Sources */,
 				C3CE20792B71485500749EF1 /* spatial formatters.swift in Sources */,
+				C3CE20842B71FED800749EF1 /* text exporter.swift in Sources */,
 				C3E2FC042B647BE600A3006A /* core graphics.swift in Sources */,
 				C33407D02B6E3833006D00C8 /* vertex descriptors.swift in Sources */,
 				C3E2FC092B64947E00A3006A /* view.swift in Sources */,
@@ -362,8 +368,8 @@
 				C33407CE2B6E2CD1006D00C8 /* shaders.metal in Sources */,
 				C33F8AA72B59EDFC00D50127 /* range.swift in Sources */,
 				C33407912B69F8A8006D00C8 /* points assets.swift in Sources */,
-				C3CE20822B7192BC00749EF1 /* documents.swift in Sources */,
-				C385458A2B7060BB00F3F0CD /* popover.swift in Sources */,
+				C3CE20822B7192BC00749EF1 /* document.swift in Sources */,
+				C385458A2B7060BB00F3F0CD /* document selector.swift in Sources */,
 				C385458F2B707F9600F3F0CD /* shape styles.swift in Sources */,
 				C38545832B6FBB3200F3F0CD /* projections.swift in Sources */,
 				C38545862B6FC5C800F3F0CD /* uniformss.swift in Sources */,
@@ -374,7 +380,7 @@
 				C3660C722B5B9E2800873942 /* ordered collections.swift in Sources */,
 				C3440FC92B6185C40058574F /* collections.swift in Sources */,
 				C31372332B5C686E00A6AF7C /* points.swift in Sources */,
-				C38545912B7087D900F3F0CD /* selector.swift in Sources */,
+				C38545912B7087D900F3F0CD /* cross-section selector.swift in Sources */,
 				C3E2FC0B2B64B82500A3006A /* positionable.swift in Sources */,
 				C33F8AA32B59E87400D50127 /* model.swift in Sources */,
 				C3758E8D2B5B54E0001C4D5F /* loop.swift in Sources */,
@@ -523,6 +529,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = geometry/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -562,6 +569,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = geometry/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

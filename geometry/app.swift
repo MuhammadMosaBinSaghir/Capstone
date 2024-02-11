@@ -10,5 +10,6 @@ struct Geometry: App {
                 .environment(\.settings, settings)
         }
         .windowStyle(.hiddenTitleBar)
+        .windowToolbarStyle(.unified)
     }
 }

@@ -1,11 +1,9 @@
 import MetalKit
 
 struct Mesh: Transformable {
-    @frozen enum Formats: String, CaseIterable { case msh, stl }
-    
-    var scale: Float = 1
-    var position = Coordinate(x: 0, y: -0.25, z: 0)
-    var rotation = Angle(.degrees, x: -45, y: -45, z: 0)
+    var scale: Float = 4
+    var position = Coordinate(x: 0, y: 0, z: 0)
+    var rotation = Angle(.degrees, x: 25, y: -50, z: -25)
     
     var transform: Transform {
         .init(scale: scale, rotation: rotation, position: position)
