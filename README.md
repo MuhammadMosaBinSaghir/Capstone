@@ -1,3 +1,14 @@
+# Requirements
+For the code to work properly, the following conditions should be respected:
+- The chord lengths need to be included in the first line of the config file. The line should start with "% CHORDS: " followed by the chords from root to tip, separated by a space.
+- The input folder should only contain the config file (.cfg) and the mesh files (.su2)
+- The meshes need to be carefully named so that the program reads them in the correct order. To ensure proper functioning, it is recommended to add sequential numbers to the beginning of the mesh filenames. For example:
+  - 1-cessna-0.su2
+  - 2-cessna-25.su2
+  - 3-cessna-50.su2
+  - 4-cessna-75.su2
+  - 5-cessna-100.su2
+
 # Pseudocode
 ## File Management and running CFD
 - Prompt the user to enter
