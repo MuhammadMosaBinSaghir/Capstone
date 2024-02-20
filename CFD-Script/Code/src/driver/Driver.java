@@ -33,9 +33,16 @@ public class Driver {
 		
 		// Ask user to choose the input directory
 		final JFileChooser inputChooser = new JFileChooser();
-		JOptionPane.showMessageDialog(null, "Please select the input directory from the following window.\n"
-				+ "IMPORTANT NOTE: THE INPUT DIRECTORY MUST ONLY CONTAIN MESHES (.su2) AND THE CONFIG FILE (.cfg)\n"
-				+ "ANY OTHER FILE OR FOLER INCLUDED WILL ALSO BE CONSIDERED AS AN INPUT AND COULD CAUSE THE PROGRAM TO CRASH.");
+		JOptionPane.showMessageDialog(null, "                                                                                        IMPORTANT - PLEASE READ\n"
+				+ "- The input directory must only contain the config file (.cfg) and the mesh files (.su2).\n"
+				+ "- The chord lengths must be included in the first line of the config file.\n    The line should start with \"% CHORDS: \" followed by the chords from root to tip, separated by a space.\n"
+				+ "- The meshes must be carefully named so that the program reads them in the correct order.\n    To ensure proper functioning, it is recommended to add sequential numbers to the beginning of the mesh filenames. For example:\n"
+				+ "        1-cessna-0.su2\n"
+				+ "        2-cessna-25.su2\n"
+				+ "        3-cessna-50.su2\n"
+				+ "        4-cessna-75.su2\n"
+				+ "        5-cessna-100.su2\n\n"
+				+ "                                                           Please select the INPUT directory from the following window.");
 		inputChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		inputChooser.setDialogTitle("SELECT THE INPUT DIRECTORY");
 		inputChooser.showOpenDialog(inputChooser);
@@ -43,7 +50,7 @@ public class Driver {
 		
 		// Ask user to choose the output directory
 		final JFileChooser outputChooser = new JFileChooser(inputPath);
-		JOptionPane.showMessageDialog(null, "Please select the output directory from the following window.");
+		JOptionPane.showMessageDialog(null, "Please select the OUTPUT directory from the following window.");
 		outputChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		outputChooser.setDialogTitle("SELECT THE OUTPUT DIRECTORY");
 		outputChooser.showOpenDialog(outputChooser);
@@ -104,7 +111,7 @@ public class Driver {
 			}
 			meshes[i - j] = files[i];
 		}
-		/*
+		
 		// Copy input files to the working directory
 		new File(inputPath + "\\" + config).renameTo(new File(workingPath + "\\" + config));
 		for(i = 0; i < meshes.length; i++) {
@@ -113,7 +120,7 @@ public class Driver {
 		
 		
 		
-			/*** RUNNING THE CFD /
+			/*** RUNNING THE CFD ***/
 		
 		// The current mesh that is being run in the CFD
 		meshNumber = 0;
@@ -191,7 +198,7 @@ public class Driver {
 			new File(workingPath + "\\" + meshes[i]).renameTo(new File(inputPath + "\\" + meshes[i]));
 		}
 		
-		*/
+		
 		
 			/*** ANALYSIS ***/
 		
@@ -212,10 +219,6 @@ public class Driver {
 		double CL_tot = 0.0;
 		double CD_tot = 0.0;
 		double deltaB = SPAN / (double)(meshes.length - 1);	// The span distance between two slices/meshes/airfoils
-		
-		System.out.println(deltaB);
-		System.out.println(SPAN);
-		System.out.println((double) meshes.length - 1);
 		
 		// Extract chords from the config file
 		try {
