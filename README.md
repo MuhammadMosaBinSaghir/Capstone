@@ -20,4 +20,10 @@
   - Create a log file in the new folder in the output directory that contains the exit code
 - Once all meshes have been run, move the input files from the working directory back into the input directory
 
-## To be done next: Calculating Lift, Drag, and other fun things
+## Calculating Lift, Drag, and overall wing CL and CD
+- Extract chord lengths stored in the first line of the config file
+- Extract free stream u and rho from the force-breakdown file and print them to the log file
+- Extract CL and CD from each history.csv file and print them to the log
+- Convert CL to L and CD to D
+- Integrate L and D over the span to obtain the overall Lift and Drag of the wing L_tot and D_tot, print these to the log
+- Convert L_tot to CL_tot and D_tot to CD_tot and print them to the log file
